@@ -12,7 +12,6 @@ module.exports = {
   locators: {
     username: "ctl00$cphBody$txtUsername",
     password: "#ctl00_cphBody_txtPassword",
-    // selectOrg: "//div[contains(text(),'" + orgName + "')]",
     selectButton : ".tpro-btn-icon-label",
     alertContent : '.alert-contents',
     newPassword : '#ctl00_cphBody_txtNewPassword',
@@ -29,11 +28,6 @@ module.exports = {
   I.fillField(this.locators.password, Password);
  },
        
-//  Org(orgName) {
-//    I.click("//div[contains(text(),'" + orgName + "')]");
-//    I.click(this.locators.selectButton);
-//  },
-
 // This function chooses which build to Login
  SelectBuild(BuildName) {
     let build = BuildName
@@ -61,6 +55,7 @@ module.exports = {
       break;
       case 'Lima'   : I.amOnPage('https://dwsapp16a.ryanco.com/Lima/');
       break;
+      default       : I.amOnPage(BuildName);
 
     }
  },

@@ -28,8 +28,11 @@ _init() {
     holderContactEmail : '#ctl00_cphBody_txtContactEmail',
     holderContactName : '#ctl00_cphBody_txtContactFullName',
     holderContactState : '#cboContactState-combo-text',
-    holderContactSave : "//button[@class='btn btn-primary tpro_standard_button'][contains(text(),'OK')]"
-
+    holderContactSave : "//button[@class='btn btn-primary tpro_standard_button'][contains(text(),'OK')]",
+    holderStateSpecific : "//span[@class='tpro-btn-icon-label' and text()='State Specific']",
+    holderStateSpecificSave : '//span[contains(text(),"Save")]',
+    holderStateSpecificClose : '#ctl00_cphToolbarItemsRight_toolbarCloseButton'
+    
   },
 
 
@@ -113,10 +116,24 @@ _init() {
     ContactSave() {
       I.scrollTo(this.locators.holderContactSave);
       I.click(this.locators.holderContactSave);
+    },
+
+    StateSpecificOpen() {
+      I.click(this.locators.holderStateSpecific);
+    },
+
+
+    SpecificStateSelect(stateSpecific) {
+      I.click("//tr//td[contains(text(),'" + stateSpecific + "')]//following-sibling::td[*]//input[@type='checkbox']");
+    },
+
+    StateSpecificSave() {
+      I.click(this.locators.holderStateSpecificSave);
+    },
+
+    StateSpecificClose() {
+      I.click(this.locators.holderStateSpecificClose);
     }
-
-    
-
 
 
 
