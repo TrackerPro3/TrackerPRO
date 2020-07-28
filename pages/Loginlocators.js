@@ -12,10 +12,11 @@ module.exports = {
   locators: {
     username: "ctl00$cphBody$txtUsername",
     password: "#ctl00_cphBody_txtPassword",
-    // selectOrg: "//div[contains(text(),'QA - Surya')]",
     // selectOrg: "//div[contains(text(),'" + orgName + "')]",
     selectButton : ".tpro-btn-icon-label",
-    alertContent : '.alert-contents'
+    alertContent : '.alert-contents',
+    newPassword : '#ctl00_cphBody_txtNewPassword',
+    confirmPassword : '#ctl00_cphBody_txtVerifyPassword'
 
   },
 
@@ -28,37 +29,37 @@ module.exports = {
   I.fillField(this.locators.password, Password);
  },
        
- Org(orgName) {
-   I.click("//div[contains(text(),'" + orgName + "')]");
-   I.click(this.locators.selectButton);
- },
+//  Org(orgName) {
+//    I.click("//div[contains(text(),'" + orgName + "')]");
+//    I.click(this.locators.selectButton);
+//  },
 
 // This function chooses which build to Login
  SelectBuild(BuildName) {
     let build = BuildName
     switch(build) {
 
-      case 'Bravo': I.amOnPage('https://cdrdevapp16.ryanco.com/Bravo/');
+      case 'Bravo'  : I.amOnPage('https://cdrdevapp16.ryanco.com/Bravo/');
       break;
       case 'Charlie': I.amOnPage('https://dwsapp16a.ryanco.com/Charlie/');
       break;
-      case 'Delta': I.amOnPage('https://cdrdevapp16.ryanco.com/Delta/');
+      case 'Delta'  : I.amOnPage('https://cdrdevapp16.ryanco.com/Delta/');
       break;
-      case 'Echo': I.amOnPage('https://dwsapp16a.ryanco.com/Echo/');
+      case 'Echo'   : I.amOnPage('https://dwsapp16a.ryanco.com/Echo/');
       break;
       case 'Foxtrot': I.amOnPage('https://dwsapp16a.ryanco.com/Foxtrot/');
       break;
-      case 'Golf': I.amOnPage('https://cdrdevapp16.ryanco.com/Golf/');
+      case 'Golf'   : I.amOnPage('https://cdrdevapp16.ryanco.com/Golf/');
       break;
-      case 'Hotel': I.amOnPage('https://dwsapp16a.ryanco.com/Charlie/');
+      case 'Hotel'  : I.amOnPage('https://cdrdevapp16.ryanco.com/Hotel/');
       break;
-      case 'India': I.amOnPage('https://dwsapp16a.ryanco.com/India/');
+      case 'India'  : I.amOnPage('https://dwsapp16a.ryanco.com/India/');
       break;
       case 'Juliett': I.amOnPage('https://cdrdevapp16.ryanco.com/Juliett/');
       break;
-      case 'Kilo': I.amOnPage('https://dwsapp16a.ryanco.com/Kilo/');
+      case 'Kilo'   : I.amOnPage('https://dwsapp16a.ryanco.com/Kilo/');
       break;
-      case 'Lima': I.amOnPage('https://dwsapp16a.ryanco.com/Lima/');
+      case 'Lima'   : I.amOnPage('https://dwsapp16a.ryanco.com/Lima/');
       break;
 
     }
@@ -77,29 +78,23 @@ module.exports = {
 },
 
 // This function checks for must change password page
- MustChange(PageTitle) {
+ MustChange(PageTitle,newPassword,confirmPassword) {
     let title = PageTitle
     switch(title) {
-
       case 'Tracker®PRO - Select Organization' : 
-      {
-        I.see('Select Organization');
-        break;
-      }
-
-      case 'Tracker®PRO - Login' :
         {
-          I.see('You must change your password to continue');
-          I.fillField('#ctl00_cphBody_txtNewPassword','Password');
-          I.fillField('#ctl00_cphBody_txtVerifyPassword','Password');
-          I.click('Login');
           I.see('Select Organization');
           break;
         }
-      
+      case 'Tracker®PRO - Login' :
+        {
+          I.see('You must change your password to continue');
+          I.fillField(this.locators.newPassword,newPassword);
+          I.fillField(this.locators.confirmPassword,confirmPassword);
+          I.click('Login');
+          break;
+        }
     }
-
-
  },
 
 
@@ -120,7 +115,6 @@ module.exports = {
       case 'Tracker®PRO - Home' :
         {
           break;
-          
         }
       
     }

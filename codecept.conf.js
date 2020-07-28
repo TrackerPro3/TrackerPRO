@@ -1,3 +1,10 @@
+ const {
+  setWindowSize
+
+ } = require('@codeceptjs/configure');
+
+ setWindowSize(1280,960);
+
 exports.config = {
   output: './output',
   helpers: {
@@ -7,10 +14,10 @@ exports.config = {
       waitForNavigation: "networkidle0",
       // waitForAction: 1000,
       // windowSize: '1280x960',
-      chrome: {
-        args: ['--ignore-certificate-errors','--no-sandbox', '--window-size=1280,960'],
-        defaultViewport: null
-      },
+      // chrome: {
+      //   args: ['--ignore-certificate-errors','--no-sandbox', '--window-size=1280,960'],
+      //   defaultViewport: null
+      // },
 
       "Mochawesome": {
         "uniqueScreenshotNames": "true"
@@ -48,6 +55,6 @@ exports.config = {
       enabled: true
     }
   },
-  tests: './specs/test_*.js',
+  tests: './specs/*_test.js',
   name: 'CodeceptJS'
 }

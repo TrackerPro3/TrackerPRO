@@ -1,0 +1,1 @@
+npx codeceptjs run -c codecept.conf.js ./specs/holder_test.js --steps --verbose --reporter mochawesome

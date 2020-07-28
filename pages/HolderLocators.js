@@ -21,7 +21,8 @@ _init() {
     holderState : '#cboHolderCurrentState-combo-text',
     holderZip : '#ctl00_cphBody_txtHolderCurrentZip',
     holderINCState : '#cboHolderIncorporationState-combo-text',
-    holderSave : "//span[contains(text(),'Save')]",
+    // holderSave : "//span[contains(text(),'Save')]",
+    holderSave : "//span[@class='tpro-btn-icon-label' and text()='Save']",
     holderContactAdd : '#ctl00_cphBody_holderContactJsonGrid_add',
     // holderContactType : "//label[contains(text(),'" + contactTypeSelect + "')]",
     holderContactEmail : '#ctl00_cphBody_txtContactEmail',
@@ -84,8 +85,6 @@ _init() {
 
     SaveHolder() {
     I.click(this.locators.holderSave);
-    I.click(this.locators.holderSave);
-
     },
 
     AddContact() {
