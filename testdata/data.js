@@ -9,7 +9,7 @@ module.exports = {
         Build           :   'Delta',
         Username        :   'suryateja.davuluri@ryan.com', //UserName
         Password        :   'Password', // Password
-        Org             :   'QA - Surya'
+        Org             :   'QA - Surya' //ORG
  
     },
 
