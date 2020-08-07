@@ -25,7 +25,7 @@ Before(async(I) => { // or Background
         let page = await I.grabTitle();
         I_login.OrgPage(page,data.login.Org);     // input Org Name
 
-        I.waitForText('Home',20);
+        I.waitForText('Home',30);
         I.see('Home');
   });
 
@@ -36,7 +36,7 @@ Scenario('Test Add Holder', (I) => {
     I_holder.HolderOverview();
     I.see('Holder Overview');
     I_holder.NewHolder();
-    I.waitForText('Holder Detail',20);
+    I.waitForText('Holder Detail',30);
     I.see('Holder Detail');
     I_holder.HolderName(data.holder.HolderName);
     I_holder.EntityName(data.holder.EntityName);
@@ -65,12 +65,12 @@ Scenario('Test Add Holder', (I) => {
 
 //State Specific
     I_holder.StateSpecificOpen();
-    I.waitForText('State Specific Information',20);
+    I.waitForText('State Specific Information',30);
     I_holder.SpecificStateSelect(data.holder.StateSpecific);
     I_holder.StateSpecificSave();
-    I.waitForText('State specific information updated successfully',20);
+    I.waitForText('State specific information updated successfully',30);
     I_holder.StateSpecificClose();
-    I.waitForText('Holder Detail',20);
+    I.waitForText('Holder Detail',30);
 
 // Additional Holder Info
 

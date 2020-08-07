@@ -24,7 +24,7 @@ Feature('TrackerPRO');
         let page = await I.grabTitle();
         I_login.OrgPage(page,data.login.Org);     // input Org Name
 
-        I.waitForText('Home',20);
+        I.waitForText('Home',30);
         I.see('Home');
     
 
