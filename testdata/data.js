@@ -7,7 +7,7 @@ module.exports = {
         newPassword     :   'Password',  // Default Value
 
         Build           :   'Delta',
-        Username        :   'suryateja.davuluri@ryan.com',
+        Username        :   'suryateja.davuluri@ryan.com', //UserName
         Password        :   'Password',
         Org             :   'QA - Surya'
  
