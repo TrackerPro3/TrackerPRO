@@ -14,10 +14,10 @@ exports.config = {
       waitForNavigation: "networkidle0",
       // waitForAction: 1000,
       // windowSize: '1280x960',
-      // chrome: {
-      //   args: ['--ignore-certificate-errors','--no-sandbox', '--window-size=1280,960'],
-      //   defaultViewport: null
-      // },
+      chrome: {
+        args: ['--ignore-certificate-errors','--no-sandbox', '--window-size=1280,960'],
+        defaultViewport: null
+      },
 
       "Mochawesome": {
         "uniqueScreenshotNames": "true"
@@ -36,7 +36,7 @@ exports.config = {
       "reportDir": "output/mochawesome",
       "reportFilename": "TrackerPRO",
       "charts":true,
-      "overwrite":false,
+      // "overwrite":true,
       "timestamp":true
     }
   },
