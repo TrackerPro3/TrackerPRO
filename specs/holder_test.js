@@ -107,7 +107,7 @@ Scenario('Test Add Owner', (I) => {
     I.waitForText('Owner Detail',30);
     I.fillField('#ctl00_cphBody_uclModifyOwner_txtFirstName','Test Owner');
     I.click('#ctl00_cphBody_uclModifyOwner_txtOwnerID');
-    I.fillField('#ctl00_cphBody_uclModifyOwner_txtOwnerID','100000002');
+    I.fillField('#ctl00_cphBody_uclModifyOwner_txtOwnerID','100000003');
     I.wait(2);
     I.click('#ctl00_cphToolbarItemsRight_toolbarSaveButton');
     I.wait(20);

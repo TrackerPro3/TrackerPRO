@@ -11,7 +11,7 @@ exports.config = {
     Puppeteer: {
       url: 'http://localhost',
       show: true,
-      waitForNavigation: "networkidle0",
+      waitForNavigation: "domcontentloaded",
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {

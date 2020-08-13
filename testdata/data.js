@@ -6,16 +6,16 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Delta',
+        Build           :   'https://azrtracker01.trackerpro.cc/Oscar',
         Username        :   'suryateja.davuluri@ryan.com',
-        Password        :   'Password', 
+        Password        :   'Password1', 
         Org             :   'QA - Surya' 
  
     },
 
     holder : {
 
-        HolderName      :   'Test Holder Name 1',
+        HolderName      :   'Test Holder Name 2',
         EntityName      :   'Test Entity Name',
         Classification  :   'B',
         FEIN            :   '987654321',
