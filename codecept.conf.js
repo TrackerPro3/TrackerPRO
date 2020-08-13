@@ -1,9 +1,9 @@
- const {
+const {
   setWindowSize
 
- } = require('@codeceptjs/configure');
+} = require('@codeceptjs/configure');
 
- setWindowSize(1280,960);
+setWindowSize(1280, 960);
 
 exports.config = {
   output: './output',
@@ -15,7 +15,7 @@ exports.config = {
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {
-        args: ['--ignore-certificate-errors','--no-sandbox', '--window-size=1280,960'],
+        args: ['--ignore-certificate-errors', '--no-sandbox', '--window-size=1280,960'],
         defaultViewport: null
       },
 
@@ -25,8 +25,8 @@ exports.config = {
 
 
     }
-      
-    
+
+
   },
   include: {
     I: './steps_file.js'
@@ -35,9 +35,9 @@ exports.config = {
     "reporterOptions": {
       "reportDir": "output/mochawesome",
       "reportFilename": "TrackerPRO",
-      "charts":true,
+      "charts": true,
       // "overwrite":true,
-      "timestamp":true
+      "timestamp": true
     }
   },
   bootstrap: null,
