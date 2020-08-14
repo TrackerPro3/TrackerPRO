@@ -5,11 +5,14 @@ const {
 
 setWindowSize(1280, 960);
 
+let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
+
 exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
-      url: 'http://localhost',
+      url: data.login.Build,
+      // url: process.env.CODECEPT_URL || data.login.Build,
       show: true,
       waitForNavigation: "domcontentloaded",
       // waitForAction: 1000,

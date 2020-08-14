@@ -32,15 +32,13 @@ module.exports = {
 
         StateSpecific   :   'KS'
 
-    }   
+    },
+    
+    letter : {
 
+        HolderName      :   'DDL'
 
-
-
-
-
-
-
+    }
 
 
 }

@@ -55,7 +55,7 @@ module.exports = {
       break;
       case 'Lima'   : I.amOnPage('https://dwsapp16a.ryanco.com/Lima/');
       break;
-      default       : I.amOnPage(BuildName);
+      default       : I.amOnPage('/');
 
     }
  },

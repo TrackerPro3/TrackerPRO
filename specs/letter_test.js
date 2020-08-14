@@ -2,6 +2,7 @@
 Feature('Owner Notification');
 
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
+let I_letter = require('C:/Users/RC08508/CodeceptJS/pages/letter_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 
 
@@ -32,92 +33,78 @@ Before(async (I) => { // or Background
 Scenario('Generate Basic DDL Letter', (I) => {
 
   I.say('Generate Normal Letters');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'B');
-  I.pressKey(['Tab', 'Tab']);
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('B');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
 
   I.say('Create Letters for Additional Owners');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+  
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'B');
-  I.pressKey(['Tab', 'Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('B');
   I.checkOption('Create Letters for Additional Owners');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
 
   I.say('Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'B');
-  I.pressKey(['Tab', 'Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('B');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 
   I.say('Create Letters for Additional Owners/Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'B');
-  I.pressKey(['Tab', 'Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('B');
   I.checkOption('Create Letters for Additional Owners');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 });
 
 
@@ -125,276 +112,240 @@ Scenario('Generate Basic DDL Letter', (I) => {
 Scenario('Generate Advanced DDL Letter', (I) => {
 
   I.say('Generate Normal Letters');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'A');
-  I.pressKey(['Tab', 'Tab']);
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('A');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 
   I.say('Create Letters for Additional Owners');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'A');
-  I.pressKey(['Tab', 'Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('A');
   I.checkOption('Create Letters for Additional Owners');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 
   I.say('Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'A');
-  I.pressKey(['Tab', 'Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('A');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 
   I.say('Create Letters for Additional Owners/Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
   I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text', 'D');
-  I.pressKey(['Tab', 'Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'A');
-  I.pressKey(['Tab', 'Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('D');
+  I_letter.SelectLetterTemplate('A');
   I.checkOption('Create Letters for Additional Owners');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
+  I_letter.GenerateLetter();
   I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 });
 
 
 Scenario('Generate Search Letter', (I) => {
 
   I.say('Generate Normal Letters');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','Se');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','B');
-  I.pressKey(['Tab','Tab']);
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('Se');
+  I_letter.SelectLetterTemplate('B');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+ 
 
   I.say('Create Letters for Additional Owners');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
-  I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
-  I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','Se');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','B');
-  I.pressKey(['Tab','Tab']);
-  I.checkOption('Create Letters for Additional Owners');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
-  I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
-  I.see('Report Selection');
 
-  I.say('Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','Se');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','B');
-  I.pressKey(['Tab','Tab']);
-  I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('Se');
+  I_letter.SelectLetterTemplate('B');
+  I.checkOption('Create Letters for Additional Owners');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
   
+
+  I.say('Create One Letter per Owner');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
+  I.wait(5);
+  I_letter.SelectHolder(data.letter.HolderName);
+  I.wait(5);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('Se');
+  I_letter.SelectLetterTemplate('B');
+  I.checkOption('Create One Letter per Owner');
+  I_letter.FinalizeLetter();
+  I.wait(2);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
+  I.see('Report Selection');
+  
+  
   I.say('Create Letters for Additional Owners/Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','Se');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','B');
-  I.pressKey(['Tab','Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('Se');
+  I_letter.SelectLetterTemplate('B');
   I.checkOption('Create Letters for Additional Owners');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+ 
 });
 
 
 Scenario('Generate State CD Letter', (I) => {
 
   I.say('Generate Normal Letters');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
-  I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
-  I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','State C');
-  I.pressKey(['Tab','Tab']);
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
-  I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
-  I.see('Report Selection');
 
-  I.say('Create Letters for Additional Owners');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','State C');
-  I.pressKey(['Tab','Tab']);
-  I.checkOption('Create Letters for Additional Owners');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State C');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
-  I.see('Report Selection');
-
-  I.say('Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
-  I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
-  I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','State C');
-  I.pressKey(['Tab','Tab']);
-  I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
-  I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
   
+
+  I.say('Create Letters for Additional Owners');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
+  I.wait(5);
+  I_letter.SelectHolder(data.letter.HolderName);
+  I.wait(5);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State C');
+  I.checkOption('Create Letters for Additional Owners');
+  I_letter.FinalizeLetter();
+  I.wait(2);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
+  I.see('Report Selection');
+  
+
+  I.say('Create One Letter per Owner');
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
+  I.wait(5);
+  I_letter.SelectHolder(data.letter.HolderName);
+  I.wait(5);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State C');
+  I.checkOption('Create One Letter per Owner');
+  I_letter.FinalizeLetter();
+  I.wait(2);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
+  I.see('Report Selection');
+ 
+  
   I.say('Create Letters for Additional Owners/Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'State C');
-  I.pressKey(['Tab','Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State C');
   I.checkOption('Create Letters for Additional Owners');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+  
 });
 
 
@@ -402,91 +353,79 @@ Scenario('Generate State CD Letter', (I) => {
 Scenario('Generate State Extension Letter', (I) => {
 
   I.say('Generate Normal Letters');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','State E');
-  I.pressKey(['Tab','Tab']);
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State E');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+ 
 
   I.say('Create Letters for Additional Owners');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','State E');
-  I.pressKey(['Tab','Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State E');
   I.checkOption('Create Letters for Additional Owners');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+ 
 
   I.say('Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text','State E');
-  I.pressKey(['Tab','Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State E');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+ 
   
   I.say('Create Letters for Additional Owners/Create One Letter per Owner');
-  I.click('//a[contains(text(),"Owner Notification")]');
-  I.click('//a[contains(text(),"Generate Notification Letters")]');
-  I.waitForText('Generate Notification Letters',30);
+
+  I_letter.OwnerNotificationMenu();
+  I_letter.GenerateNotificationPage();
+  I.waitForText('Generate Notification Letters', 30);
   I.wait(5);
-  I.click('//div[contains(text(),"DDL")]');
+  I_letter.SelectHolder(data.letter.HolderName);
   I.wait(5);
-  I.click('//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]');
-  I.click('#ctl00_cphBody_catSelector_category-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_category-combo-text','St');
-  I.pressKey(['Tab','Tab']);
-  I.click('#ctl00_cphBody_catSelector_items-combo-text');
-  I.fillField('#ctl00_cphBody_catSelector_items-combo-text', 'State E');
-  I.pressKey(['Tab','Tab']);
+  I_letter.SelectAllStates();
+  I_letter.SelectLetterCategory('St');
+  I_letter.SelectLetterTemplate('State E');
   I.checkOption('Create Letters for Additional Owners');
   I.checkOption('Create One Letter per Owner');
-  I.scrollTo('#ctl00_cphBody_btnNotificationType_1');
-  I.click('#ctl00_cphBody_btnNotificationType_1');
+  I_letter.FinalizeLetter();
   I.wait(2);
-  I.click('#ctl00_cphToolbarItemsRight_iconBtnGenerate');
-  I.waitForText('Report Selection',30);
+  I_letter.GenerateLetter();
+  I.waitForText('Report Selection', 30);
   I.see('Report Selection');
+ 
 });
 
