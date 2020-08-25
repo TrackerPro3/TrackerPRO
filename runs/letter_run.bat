@@ -1,0 +1,1 @@
+npx codeceptjs run --grep "@letter" -c codecept.conf.js ./specs/let_test.js --steps --verbose --reporter mochawesome

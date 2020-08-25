@@ -62,7 +62,14 @@ _init() {
 
     ConfirmRyanMail() {
     I.click(this.locators.ryanmailConfirm);
-    }
+    },
+
+    // LetterCheck() {
+    //   if(value.LetterType.indexOf('DDL') != -1)
+    //   {
+    //   I.checkOption('By selecting the checkbox, I agree to the letter format change chosen knowing it could affect the way the letter looks or the number of pages generated.');
+    //   }
+    // }
 
 
 

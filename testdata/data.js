@@ -6,7 +6,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtracker01.trackerpro.cc/Lima/Authentication/Login.aspx',
+        Build           :   'Bravo',
         Username        :   'suryateja.davuluri@ryan.com',
         Password        :   'Password', 
         Org             :   'QA - Surya' 

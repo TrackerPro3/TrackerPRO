@@ -105,11 +105,11 @@ Scenario('Test Add Single Holder @oneholder', (I) => {
 
 
 
-var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx','Sheet2');
+var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx','Holder');
 
 td.forEach(function(value){
 
-    Scenario("Test Multiple Holder '" + value.Classification  + "' @allholders", (I) => {
+    Scenario("Test Multiple Holder '" + value.HolderType  + "' @allholders", (I) => {
 
     //CreateHolder
     I_holder.HolderOverview();
