@@ -6,7 +6,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Bravo',
+        Build           :   'Foxtrot',
         Username        :   'suryateja.davuluri@ryan.com',
         Password        :   'Password', 
         Org             :   'QA - Surya' 
@@ -46,6 +46,21 @@ module.exports = {
     letter : {
 
         HolderName      :   'DDL'
+
+    },
+
+
+
+    report : {
+
+        ReportCategory  :   'S',     // S or C
+        HolderName      :   'DDL',       
+        ReportGroup     :   'Separate',     //
+        ReportDetail    :   'Finalize',     // Preview or Finalize
+        DatePaid        :   '08202020',     // N or Date
+        ReportType      :   'Final',     // Prelim or Final
+        State           :   'VA'
+
 
     }
 

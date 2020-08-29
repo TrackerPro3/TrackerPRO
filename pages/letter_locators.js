@@ -4,72 +4,72 @@ module.exports = {
 
   // insert your locators and methods here
 
-_init() {
+  _init() {
 
-  I = require('../steps_file.js')();
-},
+    I = require('../steps_file.js')();
+  },
 
   locators: {
-   ownerNotificationpage    : '//a[contains(text(),"Owner Notification")]',
-   generateNotificationpage : '//a[contains(text(),"Generate Notification Letters")]',
-   selectAllStates          : '//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]',
-   letterCategory           : '#ctl00_cphBody_catSelector_category-combo-text',
-   letterTemplate           : '#ctl00_cphBody_catSelector_items-combo-text',
-   letterFinalize           : '#ctl00_cphBody_btnNotificationType_1',
-   generateLetter           : '#ctl00_cphToolbarItemsRight_iconBtnGenerate',
-   ryanmailConfirm          : '#btnUpmsWarningGenerateLetters'
+    ownerNotificationMenu: '//a[contains(text(),"Owner Notification")]',
+    generateNotificationpage: '//a[contains(text(),"Generate Notification Letters")]',
+    selectAllStates: '//div[@id="letterGenerationStateGrid-table"]//span[@class="checkbox checkbox-select-all"]',
+    letterCategory: '#ctl00_cphBody_catSelector_category-combo-text',
+    letterTemplate: '#ctl00_cphBody_catSelector_items-combo-text',
+    letterFinalize: '#ctl00_cphBody_btnNotificationType_1',
+    generateLetter: '#ctl00_cphToolbarItemsRight_iconBtnGenerate',
+    ryanmailConfirm: '#btnUpmsWarningGenerateLetters'
 
-    
+
   },
 
 
-    OwnerNotificationMenu() {
+  OwnerNotificationMenu() {
     I.click(this.locators.ownerNotificationpage)
-    },
+  },
 
-    GenerateNotificationPage() {
+  GenerateNotificationPage() {
     I.click(this.locators.generateNotificationpage);
-    },
+  },
 
-    SelectHolder(holdername){
+  SelectHolder(holdername) {
     I.click("//div[contains(text(),'" + holdername + "')]");
-    },
-  
-    SelectAllStates() {
+  },
+
+  SelectAllStates() {
     I.click(this.locators.selectAllStates);
-    },
+  },
 
-    SelectLetterCategory(LetterCategory) {
+  SelectLetterCategory(LetterCategory) {
     I.click(this.locators.letterCategory);
-    I.fillField(this.locators.letterCategory,LetterCategory);
-    I.pressKey(['Tab','Tab']);
-    },
+    I.fillField(this.locators.letterCategory, LetterCategory);
+    I.pressKey(['Tab', 'Tab']);
+  },
 
-    SelectLetterTemplate(LetterTemplate) {
+  SelectLetterTemplate(LetterTemplate) {
     I.click(this.locators.letterTemplate);
-    I.fillField(this.locators.letterTemplate,LetterTemplate);
-    I.pressKey(['Tab','Tab']);
-    },
-   
-    FinalizeLetter() {
+    I.fillField(this.locators.letterTemplate, LetterTemplate);
+    I.pressKey(['Tab', 'Tab']);
+  },
+
+  FinalizeLetter() {
     I.scrollTo(this.locators.letterFinalize);
     I.click(this.locators.letterFinalize);
-    },
+  },
 
-    GenerateLetter() {
+  GenerateLetter() {
     I.click(this.locators.generateLetter);
-    },
+  },
 
-    ConfirmRyanMail() {
+  ConfirmRyanMail() {
     I.click(this.locators.ryanmailConfirm);
-    },
+  },
 
-    // LetterCheck() {
-    //   if(value.LetterType.indexOf('DDL') != -1)
-    //   {
-    //   I.checkOption('By selecting the checkbox, I agree to the letter format change chosen knowing it could affect the way the letter looks or the number of pages generated.');
-    //   }
-    // }
+  // LetterCheck() {
+  //   if(value.LetterType.indexOf('DDL') != -1)
+  //   {
+  //   I.checkOption('By selecting the checkbox, I agree to the letter format change chosen knowing it could affect the way the letter looks or the number of pages generated.');
+  //   }
+  // }
 
 
 

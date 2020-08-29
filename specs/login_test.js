@@ -14,16 +14,9 @@ Scenario('Test Login', async (I) => {
   I.see('Forgot your password?');
   I_login.Password(data.login.defaultPassword);
   I.click('Next');
-
-  let alert = await I.grabTextFrom(I_login.locators.alertContent);
-  I_login.ActualPassword(alert, data.login.Password);   // input Password
-
-  let title = await I.grabTitle();
-  I_login.MustChange(title, data.login.newPassword, data.login.newPassword);
-
-  let page = await I.grabTitle();
-  I_login.OrgPage(page, data.login.Org);     // input Org Name
-
+  I_login.ActualPassword(await I.grabTextFrom(I_login.locators.alertContent), data.login.Password);   // input Password
+  I_login.MustChange(await I.grabTitle(), data.login.newPassword, data.login.newPassword);
+  I_login.OrgPage(await I.grabTitle(), data.login.Org);     // input Org Name
   I.waitForText('Home', 30);
   I.see('Home');
 

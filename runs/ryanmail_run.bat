@@ -1,1 +1,1 @@
-npx codeceptjs run --grep "@ryanmail" -c codecept.conf.js ./specs/let_test.js --steps --verbose --reporter mochawesome
+npx codeceptjs run --grep "@ryanmail" -c codecept.conf.js ./specs/letters_test.js --steps --verbose --reporter mochawesome

@@ -31,70 +31,69 @@ Before(async (I) => { // or Background
 });
 
 
-var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx','Letter');
+var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Letter');
 
-td.forEach(function(value) {
+td.forEach(function (value) {
 
 
-Scenario("Generate '" + value.LetterType + "' Letter @letter ", (I) => {
+  Scenario("Generate '" + value.LetterType + "' Letter @letter ", (I) => {
 
-  I_letter.OwnerNotificationMenu();
-  I_letter.GenerateNotificationPage();
-  I.waitForText('Generate Notification Letters', 30);
-  I.wait(5);
-  I_letter.SelectHolder(data.letter.HolderName);
-  I.wait(5);
-  I_letter.SelectAllStates();
-  I_letter.SelectLetterCategory(value.LetterCategory);
-  I_letter.SelectLetterTemplate(value.LetterTemplate);
-  I.checkOption(value.Option1);
-  I.checkOption(value.Option2);
-  I_letter.FinalizeLetter();
-  I.wait(2);
-  I_letter.GenerateLetter();
-  I.waitForText('Report Selection', 30);
-  I.see('Report Selection');
+    I_letter.OwnerNotificationMenu();
+    I_letter.GenerateNotificationPage();
+    I.waitForText('Generate Notification Letters', 30);
+    I.wait(5);
+    I_letter.SelectHolder(data.letter.HolderName);
+    I.wait(5);
+    I_letter.SelectAllStates();
+    I_letter.SelectLetterCategory(value.LetterCategory);
+    I_letter.SelectLetterTemplate(value.LetterTemplate);
+    I.checkOption(value.Option1);
+    I.checkOption(value.Option2);
+    I_letter.FinalizeLetter();
+    I.wait(2);
+    I_letter.GenerateLetter();
+    I.waitForText('Report Selection', 30);
+    I.see('Report Selection');
 
-});
+  });
 
 })
 
 
-var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx','RyanMail');
+var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'RyanMail');
 
-td.forEach(function(value) {
+td.forEach(function (value) {
 
 
-Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
+  Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
 
-  I_letter.OwnerNotificationMenu();
-  I_letter.GenerateNotificationPage();
-  I.waitForText('Generate Notification Letters', 30);
-  I.wait(5);
-  I_letter.SelectHolder(data.letter.HolderName);
-  I.wait(5);
-  I_letter.SelectAllStates();
-  I_letter.SelectLetterCategory(value.LetterCategory);
-  I_letter.SelectLetterTemplate(value.LetterTemplate);
-  I.checkOption(value.Option1);
-  I.checkOption(value.Option2);
-  I.wait(2);
-  I.checkOption('Send by RyanMail');
-  I.wait(3);
-  I.checkOption('Override Return Address');
-  I.checkOption('Override Notification Type');
-  I_letter.FinalizeLetter();
-  I.wait(2);
-  I_letter.GenerateLetter();
-  I.wait(2);
-  if(value.LetterType.indexOf('DDL') != -1)
-      {
+    I_letter.OwnerNotificationMenu();
+    I_letter.GenerateNotificationPage();
+    I.waitForText('Generate Notification Letters', 30);
+    I.wait(5);
+    I_letter.SelectHolder(data.letter.HolderName);
+    I.wait(5);
+    I_letter.SelectAllStates();
+    I_letter.SelectLetterCategory(value.LetterCategory);
+    I_letter.SelectLetterTemplate(value.LetterTemplate);
+    I.checkOption(value.Option1);
+    I.checkOption(value.Option2);
+    I.wait(2);
+    I.checkOption('Send by RyanMail');
+    I.wait(3);
+    I.checkOption('Override Return Address');
+    I.checkOption('Override Notification Type');
+    I_letter.FinalizeLetter();
+    I.wait(2);
+    I_letter.GenerateLetter();
+    I.wait(2);
+    if (value.LetterType.indexOf('DDL') != -1) {
       I.checkOption('By selecting the checkbox, I agree to the letter format change chosen knowing it could affect the way the letter looks or the number of pages generated.');
-      }
-  I_letter.ConfirmRyanMail();
-  I.waitForText('Report Selection', 30);
-  I.see('Report Selection');
+    }
+    I_letter.ConfirmRyanMail();
+    I.waitForText('Report Selection', 30);
+    I.see('Report Selection');
 
-});
+  });
 
 })
