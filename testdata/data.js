@@ -6,7 +6,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Foxtrot',
+        Build           :   'Echo',
         Username        :   'suryateja.davuluri@ryan.com',
         Password        :   'Password', 
         Org             :   'QA - Surya' 
@@ -54,13 +54,24 @@ module.exports = {
     report : {
 
         ReportCategory  :   'S',     // S or C
-        HolderName      :   'DDL',       
-        ReportGroup     :   'Separate',     //
+        HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
+        ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
         DatePaid        :   '08202020',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
-        State           :   'VA'
+        StateList       :   ['AK','KS','MD','MT','ND','UT','VT']   //['AK','KS','MD','MT','ND','UT','VT']
+    },
 
+
+    submitreport : {
+
+        ReportCategory  :   'S',     // S or C
+        HolderList      :   ['WOF'], // ['Card','DDL','WOF','PJ Corporation']
+        ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
+        ReportDetail    :   'Finalize',     // Preview or Finalize
+        DatePaid        :   '08202020',     // N or Date
+        ReportType      :   'Final',     // Prelim or Final
+        StateList       :   ['AK','KS','MD','MT','ND','UT','VT']
 
     }
 

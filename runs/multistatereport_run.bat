@@ -1,1 +1,0 @@
-npx codeceptjs run --grep "@multistatereport" -c codecept.conf.js ./specs/report_test.js --steps --verbose --reporter mochawesome

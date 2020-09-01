@@ -5,7 +5,7 @@ Feature('TrackerPRO Holder');
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let I_holder = require('C:/Users/RC08508/CodeceptJS/pages/holder_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
-let xl = require('C:/Users/RC08508/CodeceptJS/testdata/multidata.js');
+let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
 
 
 
