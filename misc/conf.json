@@ -1,0 +1,50 @@
+
+
+{
+    "output": "./output",
+    "helpers": {
+      "Puppeteer": {
+        "url": "https://cdrdevapp16.ryanco.com/Delta",
+        "show": true,
+        "waitForNavigation": "domcontentloaded",
+       
+        "chrome": {
+          "args": ["--ignore-certificate-errors", "--no-sandbox", "--window-size=1280,960"],
+          "defaultViewport": null
+        },
+  
+        "Mochawesome": {
+          "uniqueScreenshotNames": "true"
+        }
+  
+  
+      }
+  
+  
+    },
+    "include": {
+      "I": "./steps_file.js"
+    },
+    "mocha": {
+      "reporterOptions": {
+        "reportDir": "output/mochawesome",
+        "reportFilename": "TrackerPRO",
+        "charts": true,
+        "timestamp": true
+      }
+    },
+    "bootstrap": null,
+    "teardown": null,
+    "hooks": [],
+   
+    "plugins": {
+      "screenshotOnFail": {
+        "enabled": true
+      },
+      "retryFailedStep": {
+        "enabled": true
+      }
+    },
+    "tests": "./specs/*_test.js",
+    "name": "CodeceptJS"
+  }

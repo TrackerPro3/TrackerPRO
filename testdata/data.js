@@ -6,10 +6,10 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Delta',
+        Build           :   'Echo',
         Username        :   'suryateja.davuluri@ryan.com',
-        Password        :   'Password',
-        Org             :   'QA - Surya'
+        Password        :   'Password', 
+        Org             :   'QA - Surya' 
  
     },
 
@@ -30,18 +30,50 @@ module.exports = {
         ContactEmail    :   'testemail@test.com',
         ContactState    :   'FL',
 
-        StateSpecific   :   'KS'
+        StateSpecific   :   'KS',
 
-    }   
+        UDFName         :   'U',
+        StatIndName     :   '%',
+        StatIndDesc     :   'SI1'
+        
+
+    },
+
+    
+
+    
+    
+    letter : {
+
+        HolderName      :   'DDL'
+
+    },
 
 
 
+    report : {
+
+        ReportCategory  :   'S',     // S or C
+        HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
+        ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
+        ReportDetail    :   'Finalize',     // Preview or Finalize
+        DatePaid        :   '08202020',     // N or Date
+        ReportType      :   'Final',     // Prelim or Final
+        StateList       :   ['AK','KS','MD','MT','ND','UT','VT']   //['AK','KS','MD','MT','ND','UT','VT']
+    },
 
 
+    submitreport : {
 
+        ReportCategory  :   'S',     // S or C
+        HolderList      :   ['WOF'], // ['Card','DDL','WOF','PJ Corporation']
+        ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
+        ReportDetail    :   'Finalize',     // Preview or Finalize
+        DatePaid        :   '08202020',     // N or Date
+        ReportType      :   'Final',     // Prelim or Final
+        StateList       :   ['AK','KS','MD','MT','ND','UT','VT']
 
-
-
+    }
 
 }
 

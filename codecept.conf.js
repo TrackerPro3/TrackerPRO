@@ -1,21 +1,24 @@
- const {
+const {
   setWindowSize
 
- } = require('@codeceptjs/configure');
+} = require('@codeceptjs/configure');
 
- setWindowSize(1280,960);
+setWindowSize(1280, 960);
+
+let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 
 exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
-      url: 'http://localhost',
+      url: data.login.Build,
+      // url : process.env.profile || data.login.Build,
       show: true,
-      waitForNavigation: "networkidle0",
+      waitForNavigation: "domcontentloaded",
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {
-        args: ['--ignore-certificate-errors','--no-sandbox', '--window-size=1280,960'],
+        args: ['--ignore-certificate-errors', '--no-sandbox', '--window-size=1280,960'],
         defaultViewport: null
       },
 
@@ -25,8 +28,8 @@ exports.config = {
 
 
     }
-      
-    
+
+
   },
   include: {
     I: './steps_file.js'
@@ -35,9 +38,9 @@ exports.config = {
     "reporterOptions": {
       "reportDir": "output/mochawesome",
       "reportFilename": "TrackerPRO",
-      "charts":true,
+      "charts": true,
       // "overwrite":true,
-      "timestamp":true
+      "timestamp": true
     }
   },
   bootstrap: null,
