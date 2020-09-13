@@ -6,10 +6,11 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Echo',
-        Username        :   'suryateja.davuluri@ryan.com',
+        Build           :   'Hotel',
+        Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
-        Org             :   'QA - Surya' 
+        Org             :   'QA - Surya',
+        Browser         :   'Chrome'
  
     },
 
@@ -45,7 +46,7 @@ module.exports = {
     
     letter : {
 
-        HolderName      :   'DDL'
+        HolderName      :   'WOF'
 
     },
 
@@ -59,19 +60,23 @@ module.exports = {
         ReportDetail    :   'Finalize',     // Preview or Finalize
         DatePaid        :   '08202020',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
-        StateList       :   ['AK','KS','MD','MT','ND','UT','VT']   //['AK','KS','MD','MT','ND','UT','VT']
+        StateList       :   'RI',   //['AK','KS','MD','MT','ND','UT','VT']
+        StateList1      :   ['NY'],   //['AK','KS','MD','MT','ND','UT','VT']
+        StateList2      :   ['GA','GU']   //['AK','KS','MD','MT','ND','UT','VT']
+
+
     },
 
 
     submitreport : {
 
         ReportCategory  :   'S',     // S or C
-        HolderList      :   ['WOF'], // ['Card','DDL','WOF','PJ Corporation']
+        HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
         ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
-        DatePaid        :   '08202020',     // N or Date
+        DatePaid        :   '09012020',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
-        StateList       :   ['AK','KS','MD','MT','ND','UT','VT']
+        StateList       :   ['KS','MD','MT','ND','UT','VT']
 
     }
 

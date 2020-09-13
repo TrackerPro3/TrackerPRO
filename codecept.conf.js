@@ -1,8 +1,5 @@
-const {
-  setWindowSize
-
-} = require('@codeceptjs/configure');
-
+const { setWindowSize } = require('@codeceptjs/configure');
+const { output } = require('codeceptjs');
 setWindowSize(1280, 960);
 
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
@@ -19,28 +16,41 @@ exports.config = {
       // windowSize: '1280x960',
       chrome: {
         args: ['--ignore-certificate-errors', '--no-sandbox', '--window-size=1280,960'],
-        defaultViewport: null
+        defaultViewport: null,
       },
-
-      "Mochawesome": {
-        "uniqueScreenshotNames": "true"
-      },
-
-
-    }
+    },
+    Mochawesome: {
+      uniqueScreenshotNames: true
+    },
+   
 
 
   },
   include: {
     I: './steps_file.js'
   },
-  mocha: {
+  "mocha": {
     "reporterOptions": {
-      "reportDir": "output/mochawesome",
-      "reportFilename": "TrackerPRO",
-      "charts": true,
-      // "overwrite":true,
-      "timestamp": true
+      "codeceptjs-cli-reporter": {
+        "stdout": "-",
+        "options": {
+          "verbose": true,
+          "steps": true,
+        }
+      },
+      "mochawesome": {
+        "stdout": "./output/mochawesome/console.log",
+        "options": {
+          "reportDir": "output/mochawesome",
+          "reportFilename": "TrackerPRO",
+          "charts": true,
+          // "overwrite":true,
+          "timestamp": true,
+          // "quiet":true
+          "code": true
+        }
+      },
+     
     }
   },
   bootstrap: null,
@@ -54,10 +64,7 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
-    retryFailedStep: {
-      enabled: true
-    }
   },
   tests: './specs/*_test.js',
-  name: 'CodeceptJS'
+  name: 'CodeceptJS',
 }

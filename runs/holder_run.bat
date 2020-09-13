@@ -1,1 +1,1 @@
-npx codeceptjs run --grep "@oneholder" -c codecept.conf.js ./specs/holder_test.js --reporter mochawesome
+npx codeceptjs run -c codecept.conf.js ./specs/holder_test.js --reporter mochawesome

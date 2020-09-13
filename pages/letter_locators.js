@@ -24,18 +24,24 @@ module.exports = {
 
 
   OwnerNotificationMenu() {
-    I.click(this.locators.ownerNotificationpage)
+    I.waitForVisible(this.locators.ownerNotificationMenu,10);
+    I.click(this.locators.ownerNotificationMenu);
+    I.waitForNavigation();
   },
 
   GenerateNotificationPage() {
     I.click(this.locators.generateNotificationpage);
+    I.waitForNavigation();
+    I.waitForText('Generate Notification Letters', 30);
   },
 
   SelectHolder(holdername) {
+    I.wait(5);
     I.click("//div[contains(text(),'" + holdername + "')]");
   },
 
   SelectAllStates() {
+    I.wait(5);
     I.click(this.locators.selectAllStates);
   },
 
@@ -57,6 +63,7 @@ module.exports = {
   },
 
   GenerateLetter() {
+    I.wait(2);
     I.click(this.locators.generateLetter);
   },
 

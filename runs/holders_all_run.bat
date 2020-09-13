@@ -1,1 +1,0 @@
-npx codeceptjs run --grep "@allholders" -c codecept.conf.js ./specs/holder_test.js --reporter mochawesome
