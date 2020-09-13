@@ -9,7 +9,6 @@ exports.config = {
   helpers: {
     Puppeteer: {
       url: data.login.Build,
-      // url : process.env.profile || data.login.Build,
       show: true,
       waitForNavigation: "domcontentloaded",
       // waitForAction: 1000,

@@ -5,25 +5,6 @@ let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 
 
-  I.say('Login')
-  I_login.SelectBuild(data.login.Build);   // input Build Name
-  I.see('Ryan');
-  I_login.Username(data.login.Username);    // input Username
-  I.click('Next');
-  I.see('Forgot your password?');
-  I_login.Password(data.login.defaultPassword);
-  I.click('Next');
-  I_login.ActualPassword(await I.grabTextFrom(I_login.locators.alertContent), data.login.Password);   // input Password
-  I_login.MustChange(await I.grabTitle(), data.login.newPassword, data.login.newPassword);
-  I_login.OrgPage(await I.grabTitle(), data.login.Org);     // input Org Name
-  I.waitForText('Home', 30);
-  I.see('Home');
-
-
-
-
-
-
 Scenario('Test Add Single Holder', (I) => {
 
     I.say('Login')
@@ -100,7 +81,7 @@ Scenario('Test Add Single Holder', (I) => {
 });
 
 
-    Scenario("Test Multiple Holder @allholders", (I) => {
+    Scenario("Test Multiple Holder", (I) => {
 
         I.say('Login')
         I_login.SelectBuild(data.login.Build);   // input Build Name
