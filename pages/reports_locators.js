@@ -44,7 +44,7 @@ module.exports = {
 
 
     SelectHolder(holdername) {
-        I.click("//div[contains(text(),'" + holdername + "')]");
+        I.checkOption("//div[contains(text(),'" + holdername + "')]");
     },
 
     ReportGroup(ReportGroup) {
@@ -82,83 +82,17 @@ module.exports = {
     },
 
     ReportType(ReportType, StateCode) {
-        let State = StateCode
-        let States1 = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA'];
-        let States2 = ['GU', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA'];
-        let States3 = ['MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE'];
-        let States4 = ['NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'PR'];
-        let States5 = ['RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VI', 'VT', 'WA', 'WI', 'WV', 'WY'];
         if (ReportType == 'Prelim') {
-            if (States1.indexOf(State) > -1) {
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
-            }
-            else if (States2.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
-            }
+            I.moveCursorTo(locate("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[2]/div"));
+            I.click(locate("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[2]/div"));
 
-            else if (States3.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
-            }
-
-            else if (States4.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
-            }
-
-            else if (States5.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
-            }
         }
-
+    
         else if (ReportType == 'Final') {
-            if (States1.indexOf(State) > -1) {
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
-            }
-            else if (States2.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
-            }
-
-            else if (States3.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
-            }
-
-            else if (States4.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
-            }
-
-            else if (States5.indexOf(State) > -1) {
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.pressKey(['PageDown']);
-                I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
-                I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
-            }
+            I.moveCursorTo(locate("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[3]/div"));
+            I.click(locate("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[3]/div"));
         }
+
     },
 
 

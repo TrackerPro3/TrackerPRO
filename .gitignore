@@ -2,3 +2,4 @@ node_modules/
 output/
 mochawesome-report-jenkins/
 uploads/
+allure-report-jenkins/

@@ -18,7 +18,6 @@ Scenario('Test Login', async (I) => {
   I_login.OrgPage(await I.grabTitle(), data.login.Org);     // input Org Name
   I.waitForText('Home', 30);
   I.see('Home');
-
-
+  
 });
 

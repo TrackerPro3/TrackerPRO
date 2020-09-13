@@ -1,11 +1,9 @@
-const {
-  setWindowSize
-
-} = require('@codeceptjs/configure');
-
+const { setWindowSize } = require('@codeceptjs/configure');
+const { output } = require('codeceptjs');
 setWindowSize(1280, 960);
 
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
+let browser = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
 
 exports.config = {
   output: './output',
@@ -19,28 +17,48 @@ exports.config = {
       // windowSize: '1280x960',
       chrome: {
         args: ['--ignore-certificate-errors', '--no-sandbox', '--window-size=1280,960'],
-        defaultViewport: null
+        defaultViewport: null,
+        executablePath: browser.browserSelect(data.login.Browser)
       },
-
-      "Mochawesome": {
-        "uniqueScreenshotNames": "true"
-      },
-
-
-    }
+    },
+    Mochawesome: {
+      uniqueScreenshotNames: true
+    },
+   
 
 
   },
   include: {
     I: './steps_file.js'
   },
-  mocha: {
+  "mocha": {
     "reporterOptions": {
-      "reportDir": "output/mochawesome",
-      "reportFilename": "TrackerPRO",
-      "charts": true,
-      // "overwrite":true,
-      "timestamp": true
+      "codeceptjs-cli-reporter": {
+        "stdout": "-",
+        "options": {
+          "verbose": true,
+          "steps": true,
+        }
+      },
+      "mochawesome": {
+        "stdout": "./output/mochawesome/console.log",
+        "options": {
+          "reportDir": "output/mochawesome",
+          "reportFilename": "TrackerPRO",
+          "charts": true,
+          // "overwrite":true,
+          "timestamp": true,
+          // "quiet":true
+          "code": true
+        }
+      },
+      // "mocha-junit-reporter": {
+      //   "stdout": "./output/console.log",
+      //   "options": {
+      //     "mochaFile": "./output/result.xml"
+      //   },
+      //   "attachments": true //add screenshot for a failed test
+      // }
     }
   },
   bootstrap: null,
@@ -54,10 +72,29 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
+    pauseOnFail: {
+    },
     retryFailedStep: {
-      enabled: true
+      enabled: false,
+      retries: 2
+    },
+    autoDelay: {
+      enabled: false
+    },
+    commentStep: {
+      enabled: false,
+      registerGlobal: 'comment'
+    },
+    allure: {
+      outputDir: './output/allure'
     }
   },
   tests: './specs/*_test.js',
-  name: 'CodeceptJS'
+  name: 'CodeceptJS',
+
+  // rerun: {
+  //   // run 4 times until 1st success
+  //   minSuccess: 1,
+  //   maxReruns: 4,
+  // }
 }

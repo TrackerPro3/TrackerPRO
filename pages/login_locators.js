@@ -68,6 +68,7 @@ module.exports = {
       case 'User ID/Password is invalid. Please try again.' :
         I.fillField(this.locators.password, Password);
         I.click('Next');
+        I.waitForNavigation();
         break;
     }
 },
@@ -87,6 +88,7 @@ module.exports = {
           I.fillField(this.locators.newPassword,newPassword);
           I.fillField(this.locators.confirmPassword,confirmPassword);
           I.click('Login');
+          I.waitForNavigation();
           break;
         }
     }
@@ -104,6 +106,7 @@ module.exports = {
         I.see('Select Organization');
         I.click("//div[contains(text(),'" + orgName + "')]");
         I.click(this.locators.selectButton);
+        I.waitForNavigation();
         break;
       }
 

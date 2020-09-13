@@ -35,6 +35,7 @@ Before(async (I) => { // or Background
 
     I.click('//a[@class="dropdown-toggle"][contains(text(),"Data")]');
     I.click('//a[contains(text(),"Import Data")]');
+    I.waitForNavigation();
     I.waitForText('Import Data',30);
     // I.click('#ctl00_cphBody_cboFileMappingName');
     I.selectOption('#ctl00_cphBody_cboFileMappingName','Tracker PRO XML Layout');
@@ -46,4 +47,7 @@ Before(async (I) => { // or Background
     I.wait(2);
     I.click('#ctl00_cphToolbarItemsRight_toolbarImportButton');
     I.waitForText('Report History',30);
+    I.closeCurrentTab();
+
+
   });

@@ -46,32 +46,32 @@ module.exports = {
     holderAdditionalInfoSave: '#ctl00_cphToolbarItemsRight_toolbarSaveButton',
     holderAdditionalInfoClose: '#ctl00_cphToolbarItemsRight_toolbarCloseButton'
 
-
   },
 
-
   HolderOverview() {
-    I.click(this.locators.holderOverview)
+    I.retry(2).click(this.locators.holderOverview);
+    I.retry(2).waitForNavigation();
   },
 
   NewHolder() {
-    I.click(this.locators.holderNew);
+    I.retry(2).click(this.locators.holderNew);
+    I.retry(2).waitForNavigation();
+    I.waitForText('Holder Detail', 30);
   },
 
   HolderName(HolderName) {
-    I.fillField(this.locators.holderName, HolderName);
+    I.retry(2).fillField(this.locators.holderName, HolderName);
   },
 
   EntityName(EntityName) {
-    I.fillField(this.locators.holderEntity, EntityName);
+    I.retry(2).fillField(this.locators.holderEntity, EntityName);
   },
 
   Classification(Classification) {
-    I.click(this.locators.holderClassification);
-    I.fillField(this.locators.holderClassification, Classification)
-    I.pressKey(['Tab', 'Tab']);
+    I.retry(2).click(this.locators.holderClassification);
+    I.retry(2).fillField(this.locators.holderClassification, Classification)
+    I.retry(2).pressKey(['Tab', 'Tab']);
   },
-
 
 
   // Classification(Classification) {
@@ -79,136 +79,151 @@ module.exports = {
   //   var classifications = [Classification];
   //   var x;
   //   for (x of classifications) {
-  //     I.click(this.locators.holderClassification);
-  //     I.fillField(this.locators.holderClassification, x)
-  //     I.pressKey(['Tab', 'Tab']);
+  //     I.retry(2).click(this.locators.holderClassification);
+  //     I.retry(2).fillField(this.locators.holderClassification, x)
+  //     I.retry(2).pressKey(['Tab', 'Tab']);
   //   }
   // },
 
 
 
 
-
   FEIN(FEIN) {
-    I.fillField(this.locators.holderFEIN, FEIN);
+    I.retry(2).fillField(this.locators.holderFEIN, FEIN);
   },
 
   Address(Address) {
-    I.fillField(this.locators.holderAddress, Address);
+    I.retry(2).fillField(this.locators.holderAddress, Address);
   },
 
   City(City) {
-    I.fillField(this.locators.holderCity, City);
+    I.retry(2).fillField(this.locators.holderCity, City);
   },
 
   State(State) {
-    I.click(this.locators.holderState);
-    I.fillField(this.locators.holderState, State);
-    I.pressKey(['Tab', 'Tab']);
+    I.retry(2).click(this.locators.holderState);
+    I.retry(2).fillField(this.locators.holderState, State);
+    I.retry(2).pressKey(['Tab', 'Tab']);
   },
 
   Zip(Zip) {
-    I.fillField(this.locators.holderZip, Zip);
+    I.retry(2).fillField(this.locators.holderZip, Zip);
   },
 
   INCState(IncState) {
-    I.click(this.locators.holderINCState);
-    I.fillField(this.locators.holderINCState, IncState);
-    I.pressKey(['Tab', 'Tab']);
+    I.retry(2).click(this.locators.holderINCState);
+    I.retry(2).fillField(this.locators.holderINCState, IncState);
+    I.retry(2).pressKey(['Tab', 'Tab']);
   },
 
   SaveHolder() {
-    I.click(this.locators.holderSave);
+    I.retry(2).click(this.locators.holderSave);
+    I.waitForText('Holder saved successfully', 60);
   },
 
   AddContact() {
-    I.click(this.locators.holderContactAdd);
+    I.retry(2).click(this.locators.holderContactAdd);
+    I.waitForText('Correct the highlighted fields', 5);
   },
 
   // ContactType(ContactType) {
-  //   I.fillField("//label[contains(text(),'" + ContactType + "')]");
+  //   I.retry(2).fillField("//label[contains(text(),'" + ContactType + "')]");
   //   },
 
   ContactEmail(ContactEmail) {
-    I.click(this.locators.holderContactEmail);
-    I.fillField(this.locators.holderContactEmail, ContactEmail);
+    I.retry(2).click(this.locators.holderContactEmail);
+    I.retry(2).fillField(this.locators.holderContactEmail, ContactEmail);
   },
 
   ContactName(ContactName) {
-    I.fillField(this.locators.holderContactName, ContactName);
+    I.retry(2).fillField(this.locators.holderContactName, ContactName);
   },
 
   ContactState(ContactState) {
-    I.click(this.locators.holderContactState);
-    I.fillField(this.locators.holderContactState, ContactState);
-    I.pressKey(['Tab', 'Tab']);
+    I.retry(2).click(this.locators.holderContactState);
+    I.retry(2).fillField(this.locators.holderContactState, ContactState);
+    I.retry(2).pressKey(['Tab', 'Tab']);
   },
 
   ContactSave() {
-    I.scrollTo(this.locators.holderContactSave);
-    I.click(this.locators.holderContactSave);
+    I.retry(2).scrollTo(this.locators.holderContactSave);
+    I.retry(2).click(this.locators.holderContactSave);
   },
 
   StateSpecificOpen() {
-    I.click(this.locators.holderStateSpecific);
+    I.retry(2).click(this.locators.holderStateSpecific);
   },
 
-
   SpecificStateSelect(stateSpecific) {
-    I.click("//tr//td[contains(text(),'" + stateSpecific + "')]//following-sibling::td[*]//input[@type='checkbox']");
+    I.retry(2).waitForElement("//tr//td[contains(text(),'" + stateSpecific + "')]//following-sibling::td[*]//input[@type='checkbox']",10)
+    I.retry(2).click("//tr//td[contains(text(),'" + stateSpecific + "')]//following-sibling::td[*]//input[@type='checkbox']");
   },
 
   StateSpecificSave() {
-    I.click(this.locators.holderStateSpecificSave);
+    I.retry(2).click(this.locators.holderStateSpecificSave);
   },
 
   StateSpecificClose() {
-    I.click(this.locators.holderStateSpecificClose);
+    I.retry(2).click(this.locators.holderStateSpecificClose);
+    I.retry(2).waitForNavigation();
+    I.waitForText('Holder Detail', 30);
   },
 
-
   AdditionalHolderInfo() {
-    I.click(this.locators.holderAdditionalInfo);
+    I.retry(2).click(this.locators.holderAdditionalInfo);
   },
 
   UDFAdd() {
-    I.click(this.locators.holderAddUDF);
+    I.retry(2).waitForElement(this.locators.holderAddUDF);
+    I.retry(2).click(this.locators.holderAddUDF);
+    I.retry(2).waitForText('User Defined Field',10);
   },
 
   UDFAddName(UDFName) {
-    I.click(this.locators.holderUDFName);
-    I.fillField(this.locators.holderUDFName, UDFName);
+    I.retry(2).waitForElement(this.locators.holderUDFName,10);
+    I.retry(5).click(this.locators.holderUDFName);
+    I.retry(2).fillField(this.locators.holderUDFName, UDFName);
   },
 
   UDFSave() {
-    I.click(this.locators.holderUDFSave);
+    I.retry(2).click(this.locators.holderUDFSave);
+    I.waitForText('Additional Holder Information', 20);
+    I.wait(2);
   },
 
   StatIndAdd() {
-    I.scrollTo(this.locators.holderAddStatInd);
-    I.click(this.locators.holderAddStatInd);
+    I.retry(2).scrollTo(this.locators.holderAddStatInd);
+    I.retry(2).click(this.locators.holderAddStatInd);
+    I.retry(2).waitForText('Status Indicator',5);
   },
 
   StatIndName(StatIndName) {
-    I.click(this.locators.holderStatIndName);
-    I.fillField(this.locators.holderStatIndName, StatIndName);
+    I.retry(2).waitForElement(this.locators.holderStatIndName,10);
+    I.retry(2).click(this.locators.holderStatIndName);
+    I.retry(2).fillField(this.locators.holderStatIndName, StatIndName);
   },
 
   StatIndDesc(StatIndDesc) {
-    I.click(this.locators.holderStatIndDesc);
-    I.fillField(this.locators.holderStatIndDesc, StatIndDesc);
+    I.retry(2).click(this.locators.holderStatIndDesc);
+    I.retry(2).fillField(this.locators.holderStatIndDesc, StatIndDesc);
   },
 
   StatIndSave() {
-    I.click(this.locators.holderStatIndSave);
+    I.retry(2).click(this.locators.holderStatIndSave);
   },
 
   AdditionalHolderInfoSave() {
-    I.click(this.locators.holderAdditionalInfoSave);
+    I.wait(2);
+    I.retry(2).click(this.locators.holderAdditionalInfoSave);
+    I.waitForText('User Defined Fields and Status Indicators saved successfully', 30);
   },
 
   AdditionalHolderInfoClose() {
-    I.click(this.locators.holderAdditionalInfoClose);
+    I.retry(2).click(this.locators.holderAdditionalInfoClose);
+    I.retry(2).waitForNavigation();
+    I.waitForText('Holder Detail', 20);
   },
 
 }
+
+

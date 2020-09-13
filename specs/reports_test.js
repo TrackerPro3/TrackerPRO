@@ -1,3 +1,4 @@
+const puppeteer = require('puppeteer');
 Feature('State Reporting');
 
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
@@ -56,11 +57,14 @@ Scenario("Generate State Report @statereport ", async (I) => {
 
 });
 
-Scenario("Generate all State Reports @allstatereport ", async (I) => {
-
-    var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Sheet1');
+var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'StateReport');
 
     td.forEach(async function (value) {
+
+
+Scenario("Generate all State Reports @allstatereport ", async (I) => {
+
+    
 
         I_report.ReportMenu();
         I_report.GenerateStateReportPage();
@@ -82,7 +86,7 @@ Scenario("Generate all State Reports @allstatereport ", async (I) => {
         // for(y of states) {
         // await I_report.ReportTypeZ(value.ReportType, y);
         // }
-        await I_report.ReportTypeZ(value.ReportType, data.report.StateList);
+        await I_report.ReportTypeZ(value.ReportType, value.States);
         I.wait(2);
         I_report.GenerateStateReport();
         I.waitForText('Report History', 30);
@@ -91,33 +95,33 @@ Scenario("Generate all State Reports @allstatereport ", async (I) => {
 
 Scenario("Submit State Report @submitreport ", async (I) => {
 
-    I_report.ReportMenu();
-    I_report.GenerateStateReportPage();
-    I.waitForText('Generate State Reports', 30);
-    I_report.ReportsCategory(data.submitreport.ReportCategory);
-    let holders = data.submitreport.HolderList;
-    let x;
-    for (x of holders) {
-        I_report.SelectHolder(x);
-    }
-    I_report.ReportGroup(data.submitreport.ReportGroup);
-    I_report.ReportDetails(data.submitreport.ReportDetail);
-    I_report.DatePaid(data.submitreport.DatePaid);
-    I_report.StateTable();
+    // I_report.ReportMenu();
+    // I_report.GenerateStateReportPage();
+    // I.waitForText('Generate State Reports', 30);
+    // I_report.ReportsCategory(data.submitreport.ReportCategory);
+    // let holders = data.submitreport.HolderList;
+    // let x;
+    // for (x of holders) {
+    //     I_report.SelectHolder(x);
+    // }
+    // I_report.ReportGroup(data.submitreport.ReportGroup);
+    // I_report.ReportDetails(data.submitreport.ReportDetail);
+    // I_report.DatePaid(data.submitreport.DatePaid);
+    // I_report.StateTable();
     let states = data.submitreport.StateList;
-    let y;
-    for (y of states) {
-        await I_report.ReportTypeZ(data.submitreport.ReportType, y);
-    }
-    I_report.GenerateStateReport();
-    I.waitForText('Report History', 30);
+    // let y;
+    // for (y of states) {
+    //     await I_report.ReportTypeZ(data.submitreport.ReportType, y);
+    // }
+    // I_report.GenerateStateReport();
+    // I.waitForText('Report History', 30);
 
     let z;
     for (z of states) {
         I_report.ReportMenu();
         I.click('//a[contains(text(),"State Report Overview")]');
         I.waitForText('State Report Overview', 30)
-        I.wait(3);
+        I.waitForElement("//div[contains(text(),'" + data.submitreport.HolderList + "')]/following-sibling::div[text()='" + z + "']",60);
         I.click("//div[contains(text(),'" + data.submitreport.HolderList + "')]/following-sibling::div[text()='" + z + "']");
         I.wait(2);
         I.click('//span[contains(text(),"View")]');
@@ -159,3 +163,41 @@ Scenario("Submit State Report @submitreport ", async (I) => {
 
 });
 
+
+Scenario("Generate State Report @test ", async (I) => {
+
+    I_report.ReportMenu();
+    I_report.GenerateStateReportPage();
+    I.waitForText('Generate State Reports', 30);
+    I_report.ReportsCategory(data.report.ReportCategory);
+    let holders = data.report.HolderList;
+    let x;
+    for (x of holders) {
+        I_report.SelectHolder(x);
+    }
+    I_report.ReportGroup(data.report.ReportGroup);
+    I_report.ReportDetails(data.report.ReportDetail);
+    I_report.DatePaid(data.report.DatePaid);
+    I_report.StateTable();
+    pause();
+    (async () => {
+        const browser = await puppeteer.launch({})
+        const page = await browser.newPage()
+        await page.setViewport({ width: 1200, height: 800 })
+    
+    const scrollable_section = '.section-listbox .section-listbox';
+    
+    await page.waitForSelector('.section-listbox .section-listbox > .section-listbox');
+    
+    await page.evaluate(selector => {
+      const scrollableSection = document.querySelector(selector);
+    
+      scrollableSection.scrollTop = scrollableSection.offsetHeight;
+    }, scrollable_section);
+    
+    })
+    
+    I_report.GenerateStateReport();
+    I.waitForText('Report History', 30);
+
+});

@@ -1,3 +1,8 @@
+        // executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'
+        // executablePath: 'C:/Program Files/internet explorer/iexplore.exe'
+        // executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
+
+
 
 // use for of loops
 
@@ -7,6 +12,9 @@ var states = ['CA', 'MA'];
     I.scrollTo("//div[contains(text(),'" + x + "')]");
     I.click("//div[contains(text(),'" + x + "')]");
   }
+
+
+  // npx codeceptjs run --profile https://azrtracker01.trackerpro.cc/Juliett -c jenkins.conf.js ./specs/login_test.js --steps --verbose --reporter mochawesome
 
 
 
@@ -33,9 +41,9 @@ var states = ['CA', 'MA'];
 
 
 // datatable
-    let accounts = new DataTable(['HolderNameCreate','Entity','Classification','FEIN','Address','City','State','Zip','IncState','UDF','StatInd','StatIndDesc','ContactEmail','ContactFullName','ContactState']);
-    accounts.add(['Test Holder B','Test Entity 1','B','111111111','Test Address 1','Test City 1','CA','100000001','CA','Test UDF 1','%','Test Stat Ind 1','test1@test.com','Test Contact Name 1','CA']);
-    accounts.add(['Test Holder F','Test Entity 2','F','222222222','Test Address 2','Test City 2','CA','100000002','CA','Test UDF 2','*','Test Stat Ind 2','test2@test.com','Test Contact Name 2','CA']);
+    // let accounts = new DataTable(['HolderNameCreate','Entity','Classification','FEIN','Address','City','State','Zip','IncState','UDF','StatInd','StatIndDesc','ContactEmail','ContactFullName','ContactState']);
+    // accounts.add(['Test Holder B','Test Entity 1','B','111111111','Test Address 1','Test City 1','CA','100000001','CA','Test UDF 1','%','Test Stat Ind 1','test1@test.com','Test Contact Name 1','CA']);
+    // accounts.add(['Test Holder F','Test Entity 2','F','222222222','Test Address 2','Test City 2','CA','100000002','CA','Test UDF 2','*','Test Stat Ind 2','test2@test.com','Test Contact Name 2','CA']);
 
 
     // x.getLocation()
@@ -109,3 +117,97 @@ var states = ['CA', 'MA'];
 
 
     //  I.wait(20);
+
+
+
+
+
+  //   ReportType(ReportType, StateCode) {
+  //     let State = StateCode
+  //     let States1 = ['AK', 'AL', 'AR', 'AZ', 'CA', 'CO', 'CT', 'DC', 'DE', 'FL', 'GA'];
+  //     let States2 = ['GU', 'HI', 'IA', 'ID', 'IL', 'IN', 'KS', 'KY', 'LA', 'MA'];
+  //     let States3 = ['MD', 'ME', 'MI', 'MN', 'MO', 'MS', 'MT', 'NC', 'ND', 'NE'];
+  //     let States4 = ['NH', 'NJ', 'NM', 'NV', 'NY', 'OH', 'OK', 'OR', 'PA', 'PR'];
+  //     let States5 = ['RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VA', 'VI', 'VT', 'WA', 'WI', 'WV', 'WY'];
+  //     if (ReportType == 'Prelim') {
+  //         if (States1.indexOf(State) > -1) {
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
+  //         }
+  //         else if (States2.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
+  //         }
+
+  //         else if (States3.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
+  //         }
+
+  //         else if (States4.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
+  //         }
+
+  //         else if (States5.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[2]/div");
+  //         }
+  //     }
+
+  //     else if (ReportType == 'Final') {
+  //         if (States1.indexOf(State) > -1) {
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
+  //         }
+  //         else if (States2.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
+  //         }
+
+  //         else if (States3.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
+  //         }
+
+  //         else if (States4.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
+  //         }
+
+  //         else if (States5.indexOf(State) > -1) {
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.pressKey(['PageDown']);
+  //             I.waitForVisible("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div", 30)
+  //             I.click("//div[contains(text(),'" + State + "')]/following-sibling::div[3]/div");
+  //         }
+  //     }
+  // },
+
+  // "reporterOptions": {
+  //   "reportDir": "output/mochawesome",
+  //   "reportFilename": "TrackerPRO",
+  //   "charts": true,
+  //   // "overwrite":true,
+  //   "timestamp": true,
+  //   // "quiet":true
+  //   "code":true
+  // }

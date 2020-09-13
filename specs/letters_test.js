@@ -31,26 +31,23 @@ Before(async (I) => { // or Background
 });
 
 
+
 var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Letter');
-
-td.forEach(function (value) {
-
-
-  Scenario("Generate '" + value.LetterType + "' Letter @letter ", (I) => {
-
+    td.forEach(function (value) {
+  Scenario("Generate '" + value.LetterType + "' + Letter @letter ", (I) => {
+    
+    // comment`value.LetterType`;
+    I.say(value.LetterType,'red')
     I_letter.OwnerNotificationMenu();
     I_letter.GenerateNotificationPage();
-    I.waitForText('Generate Notification Letters', 30);
-    I.wait(5);
     I_letter.SelectHolder(data.letter.HolderName);
-    I.wait(5);
     I_letter.SelectAllStates();
     I_letter.SelectLetterCategory(value.LetterCategory);
     I_letter.SelectLetterTemplate(value.LetterTemplate);
+    I.wait(2);
     I.checkOption(value.Option1);
     I.checkOption(value.Option2);
     I_letter.FinalizeLetter();
-    I.wait(2);
     I_letter.GenerateLetter();
     I.waitForText('Report Selection', 30);
     I.see('Report Selection');
@@ -76,6 +73,7 @@ td.forEach(function (value) {
     I_letter.SelectAllStates();
     I_letter.SelectLetterCategory(value.LetterCategory);
     I_letter.SelectLetterTemplate(value.LetterTemplate);
+    I.wait(2);
     I.checkOption(value.Option1);
     I.checkOption(value.Option2);
     I.wait(2);

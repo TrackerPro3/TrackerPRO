@@ -6,6 +6,7 @@ const {
   setWindowSize(1280, 960);
   
   let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
+  let browser = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
   
   exports.config = {
     output: './output',
@@ -18,7 +19,7 @@ const {
         // windowSize: '1280x960',
         chrome: {
           args: ['--ignore-certificate-errors', '--no-sandbox', '--window-size=1280,960'],
-          defaultViewport: null
+          defaultViewport: null,
         },
   
         "Mochawesome": {
@@ -34,13 +35,13 @@ const {
       I: './steps_file.js'
     },
     mocha: {
-      "reporterOptions": {
-        "reportDir": "output/mochawesome",
-        "reportFilename": "TrackerPRO",
-        "charts": true,
-        // "overwrite":true,
-        "timestamp": true
-      }
+      // "reporterOptions": {
+      //   "reportDir": "output/mochawesome",
+      //   "reportFilename": "TrackerPRO",
+      //   "charts": true,
+      //   // "overwrite":true,
+      //   "timestamp": true
+      // }
     },
     bootstrap: null,
     teardown: null,
@@ -55,6 +56,12 @@ const {
       },
       retryFailedStep: {
         enabled: true
+      },
+      // autoDelay: {
+      //   enabled: true
+      // },
+      allure: {
+        outputDir: './output/allure'
       }
     },
     tests: './specs/*_test.js',
