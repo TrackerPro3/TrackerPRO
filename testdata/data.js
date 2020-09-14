@@ -10,7 +10,6 @@ module.exports = {
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
-        Browser         :   'Chrome'
  
     },
 
