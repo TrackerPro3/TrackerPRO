@@ -61,7 +61,7 @@ const {
       //   enabled: true
       // },
       allure: {
-        outputDir: './output/allure'
+        outputDir: './jenkins-output/allure-results'
       }
     },
     tests: './specs/*_test.js',
