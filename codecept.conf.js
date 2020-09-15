@@ -83,9 +83,9 @@ exports.config = {
   //   enabled: false,
   //   registerGlobal: 'comment'
   // },
-  // allure: {
-  //   outputDir: './output/allure'
-  // }
+  allure: {
+    outputDir: './output/allure'
+  }
   },
   tests: './specs/*_test.js',
   name: 'CodeceptJS',
