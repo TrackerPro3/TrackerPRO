@@ -25,7 +25,6 @@ exports.config = {
     },
 
 
-
   },
   include: {
     I: './steps_file.js'
@@ -51,7 +50,6 @@ exports.config = {
           "code": true
         }
       },
-
       // "mocha-junit-reporter": {
       //   "stdout": "./output/console.log",
       //   "options": {

@@ -46,6 +46,14 @@ var states = ['CA', 'MA'];
     // accounts.add(['Test Holder F','Test Entity 2','F','222222222','Test Address 2','Test City 2','CA','100000002','CA','Test UDF 2','*','Test Stat Ind 2','test2@test.com','Test Contact Name 2','CA']);
 
 
+    // x.getLocation()
+    //     .then(function(location) {
+    //         return browser.executeScript('window.scrollTo(' + location.x + ', ' + location.y + ');');
+            
+    //     })
+    //     I.click(x);
+
+
 // use for of loops
 
 // var states = ['CA', 'MA'];
@@ -54,6 +62,12 @@ var states = ['CA', 'MA'];
 //     I.scrollTo("//div[contains(text(),'" + x + "')]");
 //     I.click("//div[contains(text(),'" + x + "')]");
 //   }
+
+
+
+
+
+    //  I.wait(20);
 
 
 
