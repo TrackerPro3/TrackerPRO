@@ -1,0 +1,1 @@
+npx codeceptjs run --grep "@letter" -c codecept.conf.js ./specs/letters_test.js --reporter mocha-multi

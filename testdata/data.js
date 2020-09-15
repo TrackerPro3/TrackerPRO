@@ -1,4 +1,3 @@
-
 module.exports = {
 
     login : {
@@ -6,11 +5,19 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Hotel',
+        Build           :   'https://azrtracker01.trackerpro.cc/Juliett',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
+        Browser         :   'Chrome'
  
+    },
+
+    import : {
+
+        MappingType     :   'XML',      // TEXT or XML
+        HolderName      :   'Test Holder Utility Company',
+        FileName        :   'uploads/DDL.XML'
     },
 
     holder : {

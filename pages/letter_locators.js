@@ -65,6 +65,7 @@ module.exports = {
   GenerateLetter() {
     I.wait(2);
     I.click(this.locators.generateLetter);
+    I.waitForText('Report Selection', 30);
   },
 
   ConfirmRyanMail() {

@@ -97,5 +97,36 @@ module.exports = {
 
 
 
+    async ReportTypeZ(ReportType, StateCode) {
+        let i = 0;
+        if (ReportType == 'Prelim') {
+            while (i < 5) {
+                const numOfElements = await I.grabNumberOfVisibleElements("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[2]/div");
+                if (numOfElements === 0) {
+                    I.pressKey(['PageDown']);
+                }
+                else {
+                    I.waitForVisible("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[2]/div", 30);
+                    I.click("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[2]/div");
+                }
+                i++;
+            }
+        }
+    
+        else if (ReportType == 'Final') {
+            while (i < 5) {
+                const numOfElements = await I.grabNumberOfVisibleElements("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[3]/div");
+                if (numOfElements === 0) {
+                    I.pressKey(['PageDown']);
+                }
+                else {
+                    I.waitForVisible("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[3]/div", 30);
+                    I.click("//div[contains(text(),'" + StateCode + "')]/following-sibling::div[3]/div");
+                }
+                i++;
+            }
+        }
+
+    }
 
 }

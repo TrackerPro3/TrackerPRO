@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataTransfer>
+  <Global xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <UserDefinedFieldDeclaration>
+      <Name>CONV-Tangible Cat Type Code</Name>
+      <Enabled>true</Enabled>
+    </UserDefinedFieldDeclaration>
+    <UserDefinedFieldDeclaration>
+      <Name>CONV-Method of Transfer</Name>
+      <Enabled>true</Enabled>
+    </UserDefinedFieldDeclaration>
+  </Global>
+  <Holder xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <HolderName>DDL</HolderName>
+    <LegalEntityName>DUE DILIGENCE LETTER</LegalEntityName>
+    <HolderClassificationName>Life Insurance Company</HolderClassificationName>
+    <FederalTaxId>123456789</FederalTaxId>
+    <SICCode>1234</SICCode>
+    <NAICSCode>123456</NAICSCode>
+    <Address1>HOLDER ADDRESS 1</Address1>
+    <Address2>HOLDER ADDRESS 2</Address2>
+    <City>HOLDER CITY</City>
+    <State>CA</State>
+    <Zip>942505873</Zip>
+    <Country>USA</Country>
+    <County>COUNTY</County>
+    <StateOfIncorporation>CA</StateOfIncorporation>
+    <DateOfIncorporation>1900-01-01</DateOfIncorporation>
+    <StateOfBusiness>CA</StateOfBusiness>
+    <BranchId>BRNCH ID</BranchId>
+    <BranchName>BRANCH NAME</BranchName>
+    <UseFiscalYearEndDate>false</UseFiscalYearEndDate>
+    <PreviousHolderName>PRE HOLDER NAME LINE 1</PreviousHolderName>
+    <PreviousAddress1>PRE HOLDER ADDRESS LINE 1</PreviousAddress1>
+    <PreviousAddress2>PRE HOLDER ADDRESS LINE 2</PreviousAddress2>
+    <FilingYear>0</FilingYear>
+    <HolderContact>
+      <ContactType>R</ContactType>
+      <EmailAddress>REPORT.CONTACT@DDL.COM</EmailAddress>
+      <FullName>REPORT CONTACT</FullName>
+      <Title>REPORT CONTACT TITLE</Title>
+      <Address1>REPORT CONTACT ADDRESS 1</Address1>
+      <Address2>REPORT CONTACT ADDRESS 2</Address2>
+      <CityName>REPORT CONTACT CITY</CityName>
+      <StateName>CA</StateName>
+      <Zip>942505873</Zip>
+      <CountryName>USA</CountryName>
+      <PhoneNo>3193785839</PhoneNo>
+      <FaxNo>3192943223</FaxNo>
+    </HolderContact>
+    <HolderContact>
+      <ContactType>C</ContactType>
+      <EmailAddress>CLAIM.CONTACT@DDL.COM</EmailAddress>
+      <FullName>CLAIM CONTACT</FullName>
+      <Address1>CLAIM CONTACT ADDRESS 1</Address1>
+      <Address2>CLAIM CONTACT ADDRESS 2</Address2>
+      <CityName>CLAIM CONTACT CITY</CityName>
+      <StateName>CA</StateName>
+      <Zip>942505873</Zip>
+      <CountryName>USA</CountryName>
+      <PhoneNo>3193785814</PhoneNo>
+      <FaxNo>3192943223</FaxNo>
+    </HolderContact>
+    <HolderContact>
+      <ContactType>S</ContactType>
+      <FullName>REPORT SIGNER CONTACT</FullName>
+      <EmailAddress>REPORT.CONTACT@DDL.COM</EmailAddress>
+	  <Title>REPORT SIGNER TITLE</Title>
+	  <Address1>REPORT CONTACT ADDRESS 1</Address1>
+      <Address2>REPORT CONTACT ADDRESS 2</Address2>
+      <CityName>REPORT CONTACT CITY</CityName>
+      <StateName>CA</StateName>
+      <Zip>942505873</Zip>
+      <CountryName>USA</CountryName>
+      <PhoneNo>3193785814</PhoneNo>
+      <FaxNo>3192943223</FaxNo>
+    </HolderContact>
+    <HolderContact>
+      <ContactType>N</ContactType>
+      <FullName>NOTARY CONTACT NAME</FullName>
+      <Title>NOTARY CONTACT TITLE</Title>
+      <EmailAddress>NOTARY.CONTACT@DDL.COM</EmailAddress>
+	  <Address1>NOTARY CONTACT ADDRESS 1</Address1>
+      <Address2>NOTARY CONTACT ADDRESS 2</Address2>
+      <CityName>NOTARY CONTACT CITY</CityName>
+      <StateName>CA</StateName>
+      <Zip>942505873</Zip>
+      <CountryName>USA</CountryName>
+      <PhoneNo>3193785814</PhoneNo>
+      <FaxNo>3192943223</FaxNo>
+	  <NotaryExpirationDate>2030-12-31</NotaryExpirationDate>
+    </HolderContact>
+    <ContactAttemptTypeDeclaration>
+      <Code>D</Code>
+      <Description>D</Description>
+      <Enabled>true</Enabled>
+    </ContactAttemptTypeDeclaration>
+    <UserDefinedFieldDeclaration>
+      <Name>CONV-Owners</Name>
+      <Enabled>true</Enabled>
+    </UserDefinedFieldDeclaration>
+  </Holder>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>MS01</PropertyCodeId>
+    <PropertyNumber>1234</PropertyNumber>
+    <LastTransactionDate>2017-12-31</LastTransactionDate>
+    <PropertyCodeDescription>WAGES PAYROLL OR SALARY</PropertyCodeDescription>
+    <AccountNumber />
+    <PolicyNumber />
+    <StatusIndicatorId />
+    <AlternateState>AZ</AlternateState>
+    <ATICode>ATI CODE 1</ATICode>
+    <Description />
+    <IsRemovalIndicator />
+    <StatePaid />
+    <AmountPaid>0</AmountPaid>
+    <PaymentCheckNumber />
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness>B</IsBusiness>
+      <OwnerIdType>F</OwnerIdType>
+      <OwnerIdNumber>464646464</OwnerIdNumber>
+      <FirstName />
+      <MiddleName />
+      <LastName />
+      <BusinessName>OVEN MITT BAKERY</BusinessName>
+      <Prefix />
+      <Suffix />
+      <Address1>106 MAIDEN STREET</Address1>
+      <Address2>BUILDING 2</Address2>
+      <Address3>STE 1700</Address3>
+      <City>MARION</City>
+      <State>CA</State>
+      <Zip>90201</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId />
+      <EmailAddress>OVENMITTBAKERY@GMAIL.COM</EmailAddress>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>23132131314411111111</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>150</InitialAmount>
+      <InterestRate>0</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber />
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>MS02</PropertyCodeId>
+    <PropertyNumber>12345</PropertyNumber>
+    <LastTransactionDate>2017-12-31</LastTransactionDate>
+    <PropertyCodeDescription>COMMISSIONS</PropertyCodeDescription>
+    <AccountNumber />
+    <PolicyNumber />
+    <StatusIndicatorId />
+    <AlternateState>AZ</AlternateState>
+    <ATICode />
+    <Description />
+    <IsRemovalIndicator />
+    <StatePaid />
+    <AmountPaid>0</AmountPaid>
+    <PaymentCheckNumber />
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness>B</IsBusiness>
+      <OwnerIdType>F</OwnerIdType>
+      <OwnerIdNumber>464646464</OwnerIdNumber>
+      <FirstName />
+      <MiddleName />
+      <LastName />
+      <BusinessName>OVEN MITT BAKERY</BusinessName>
+      <Prefix />
+      <Suffix />
+      <Address1>106 MAIDEN STREET</Address1>
+      <Address2>BUILDING 2</Address2>
+      <Address3>STE 1700</Address3>
+      <City>MARION</City>
+      <State>CA</State>
+      <Zip>90201</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId />
+      <EmailAddress>OVENMITTBAKERY@GMAIL.COM</EmailAddress>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>23132131314411111111</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>1750</InitialAmount>
+      <InterestRate>0</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber />
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>MS12A</PropertyCodeId>
+    <PropertyNumber>PROP -6</PropertyNumber>
+    <LastTransactionDate>2015-12-31</LastTransactionDate>
+    <MaturityDate>2015-12-31</MaturityDate>
+    <PropertyCodeDescription>ADD PROP DESC</PropertyCodeDescription>
+    <AccountNumber>ACCT -6</AccountNumber>
+    <PolicyNumber>POLICY -6</PolicyNumber>
+    <StatusIndicatorId />
+    <AlternateState />
+    <ATICode>ATI CODE -6</ATICode>
+    <Description>EXTRA DESCRIPTION</Description>
+    <IsRemovalIndicator />
+    <DatePaid>2018-11-01</DatePaid>
+    <StatePaid>IA</StatePaid>
+    <AmountPaid>7510</AmountPaid>
+    <PaymentCheckNumber>PCN6</PaymentCheckNumber>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness>B</IsBusiness>
+      <OwnerIdType>F</OwnerIdType>
+      <OwnerIdNumber>464646464</OwnerIdNumber>
+      <FirstName />
+      <MiddleName />
+      <LastName />
+      <BusinessName>OVEN MITT BAKERY</BusinessName>
+      <Prefix />
+      <Suffix />
+      <Address1>106 MAIDEN STREET</Address1>
+      <Address2>BUILDING 2</Address2>
+      <Address3>STE 1700</Address3>
+      <City>MARION</City>
+      <State>CA</State>
+      <Zip>90201</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId />
+      <EmailAddress>OVENMITTBAKERY@GMAIL.COM</EmailAddress>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>23132131314411111111</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>7510</InitialAmount>
+      <InterestRate>2</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-21</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber>POLICY -6</CertificateNumber>
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>SC12</PropertyCodeId>
+    <PropertyNumber>PROP ID NUB - 4</PropertyNumber>
+    <LastTransactionDate>2015-12-31</LastTransactionDate>
+    <MaturityDate>2015-12-31</MaturityDate>
+    <PropertyCodeDescription>ADD PROP DESCRIPTION</PropertyCodeDescription>
+    <AccountNumber>ACCT NUM - 4</AccountNumber>
+    <PolicyNumber>CERT NUMBER</PolicyNumber>
+    <StatusIndicatorId />
+    <AlternateState />
+    <ATICode>ATI CODE -4</ATICode>
+    <Description>EXTRA DESCRIPTION</Description>
+    <IsRemovalIndicator />
+    <DatePaid>2018-11-01</DatePaid>
+    <StatePaid>IA</StatePaid>
+    <AmountPaid>0</AmountPaid>
+    <PaymentCheckNumber>PCN -4</PaymentCheckNumber>
+    <Comments>THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>THIS IS THE NOTES FIELD.</Notes>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>S</OwnerIdType>
+      <OwnerIdNumber>789456123</OwnerIdNumber>
+      <FirstName>LAURIE</FirstName>
+      <MiddleName>L</MiddleName>
+      <LastName>MEYERCOURTERTAYLOROR</LastName>
+      <BusinessName />
+      <Prefix>MRS</Prefix>
+      <Suffix>DDS</Suffix>
+      <Address1>10600 WHITE ROCK ROAD</Address1>
+      <Address2>BUILDING 3</Address2>
+      <Address3>APARTMENT 4</Address3>
+      <City>RANCHO CORDOVA</City>
+      <State>CA</State>
+      <Zip>90201</Zip>
+      <Country>USA</Country>
+      <County>USA</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId>SO</RelationshipCodeId>
+      <EmailAddress>LAURIE.MEYER-COURTER-TAYLOR@GMAIL.COM</EmailAddress>
+      <DateOfBirth>1971-01-01</DateOfBirth>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>ABC12345789797797777</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>0</InitialAmount>
+      <InterestRate>1</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-21</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>754</Shares>
+      <ParValue>150</ParValue>
+      <CUSIP>AB1244C45</CUSIP>
+      <IssuerName>ISSUER NAME</IssuerName>
+      <CertificateNumber>CERT NUMBER</CertificateNumber>
+      <Series>SERIES</Series>
+      <SecuritiesStatusId>D</SecuritiesStatusId>
+      <SecuritiesConfirmationRequired>T</SecuritiesConfirmationRequired>
+      <SecuritiesTypeCodeId>P</SecuritiesTypeCodeId>
+      <IssueDate>2000-06-30</IssueDate>
+      <PeriodBeginDate>2000-06-30</PeriodBeginDate>
+      <PeriodEndDate>2001-06-30</PeriodEndDate>
+      <AgentCode>AGENT CODE</AgentCode>
+    </Security>
+    <UserDefinedField>
+      <UserDefinedFieldName>CONV-Method of Transfer</UserDefinedFieldName>
+      <UserDefinedFieldValue>3</UserDefinedFieldValue>
+    </UserDefinedField>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>MI01</PropertyCodeId>
+    <PropertyNumber>PROP ID NUB -1</PropertyNumber>
+    <LastTransactionDate>2015-12-31</LastTransactionDate>
+    <MaturityDate>2015-12-31</MaturityDate>
+    <PropertyCodeDescription>ADDL PROP DESC</PropertyCodeDescription>
+    <AccountNumber>ACCT NUB -1</AccountNumber>
+    <PolicyNumber>POLICY NUB -1</PolicyNumber>
+    <StatusIndicatorId />
+    <AlternateState />
+    <ATICode>ATI CODE</ATICode>
+    <Description>EXTRA DESCIRPTION</Description>
+    <IsRemovalIndicator />
+    <DatePaid>2018-11-01</DatePaid>
+    <StatePaid>IA</StatePaid>
+    <AmountPaid>750100.15</AmountPaid>
+    <PaymentCheckNumber>PCN -1</PaymentCheckNumber>
+    <Comments>THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>THIS IS THE NOTES FIELD.</Notes>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>S</OwnerIdType>
+      <OwnerIdNumber>789456123</OwnerIdNumber>
+      <FirstName>LAURIE</FirstName>
+      <MiddleName>L</MiddleName>
+      <LastName>MEYERCOURTERTAYLOROR</LastName>
+      <BusinessName />
+      <Prefix>MRS</Prefix>
+      <Suffix>DDS</Suffix>
+      <Address1>10600 WHITE ROCK ROAD</Address1>
+      <Address2>BUILDING 3</Address2>
+      <Address3>APARTMENT 4</Address3>
+      <City>RANCHO CORDOVA</City>
+      <State>CA</State>
+      <Zip>90201</Zip>
+      <Country>USA</Country>
+      <County>USA</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId>SO</RelationshipCodeId>
+      <EmailAddress>LAURIE.MEYER-COURTER-TAYLOR@GMAIL.COM</EmailAddress>
+      <DateOfBirth>1971-01-01</DateOfBirth>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>ABC12345789797797777</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>75010.15</InitialAmount>
+      <InterestRate>75</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-21</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <MineralInterest>
+      <LegalDescription>LEGAL DESC</LegalDescription>
+      <ProductionState>IA</ProductionState>
+      <CountyNumber>124</CountyNumber>
+      <MineralSiteId>MSID -1</MineralSiteId>
+      <ProductionCountryCode>USA</ProductionCountryCode>
+      <CountyName>LINN</CountyName>
+      <BeginningPeriodDate>2000-01-01</BeginningPeriodDate>
+      <EndingPeriodDate>2000-06-30</EndingPeriodDate>
+      <PercentInterest>7.0000002134</PercentInterest>
+    </MineralInterest>
+    <SafeDeposit>
+      <SafeDepositBoxNumber>MSID -1</SafeDepositBoxNumber>
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber>POLICY NUB -1</CertificateNumber>
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <PeriodBeginDate>2000-01-01</PeriodBeginDate>
+      <PeriodEndDate>2000-06-30</PeriodEndDate>
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>CK07</PropertyCodeId>
+    <PropertyNumber>PROP NUM -7</PropertyNumber>
+    <LastTransactionDate>2011-12-31</LastTransactionDate>
+    <PropertyCodeDescription>MONEY ORDERS BANK</PropertyCodeDescription>
+    <AccountNumber />
+    <PolicyNumber />
+    <StatusIndicatorId />
+    <AlternateState>CA</AlternateState>
+    <ATICode />
+    <Description />
+    <IsRemovalIndicator />
+    <StatePaid />
+    <AmountPaid>0</AmountPaid>
+    <PaymentCheckNumber />
+    <Comments>THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>THIS IS THE NOTE FIELD.</Notes>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>S</OwnerIdType>
+      <OwnerIdNumber>979876541</OwnerIdNumber>
+      <FirstName>MEGAN</FirstName>
+      <MiddleName>M</MiddleName>
+      <LastName>MIRCLE</LastName>
+      <BusinessName />
+      <Prefix />
+      <Suffix />
+      <Address1>12121</Address1>
+      <Address2 />
+      <Address3 />
+      <City>LONDON</City>
+      <State />
+      <Zip>00000</Zip>
+      <Country>GBR</Country>
+      <County />
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId />
+      <EmailAddress />
+      <DriverLicenseState />
+      <DriverLicenseNumber />
+    </Owner>
+    <Cash>
+      <InitialAmount>75410</InitialAmount>
+      <InterestRate>0</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-21</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber />
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>SD01</PropertyCodeId>
+    <PropertyNumber>PROP NUMBER 3</PropertyNumber>
+    <LastTransactionDate>2015-12-31</LastTransactionDate>
+    <MaturityDate>2015-12-31</MaturityDate>
+    <PropertyCodeDescription>ADD PROP DESCRIPTION</PropertyCodeDescription>
+    <AccountNumber>ACCT NUMBER 3</AccountNumber>
+    <PolicyNumber>POLICY NUMBER 3</PolicyNumber>
+    <StatusIndicatorId />
+    <AlternateState />
+    <ATICode>ATI CODE 3</ATICode>
+    <Description>EXTRA DESCRIPTION</Description>
+    <IsRemovalIndicator />
+    <DatePaid>2018-11-01</DatePaid>
+    <StatePaid>IA</StatePaid>
+    <AmountPaid>0.01</AmountPaid>
+    <PaymentCheckNumber>PCK - 3</PaymentCheckNumber>
+    <Comments>THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>THIS IS THE NOTES FIELD.</Notes>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>S</OwnerIdType>
+      <OwnerIdNumber>789456123</OwnerIdNumber>
+      <FirstName>LAURIE</FirstName>
+      <MiddleName>L</MiddleName>
+      <LastName>MEYERCOURTERTAYLOROR</LastName>
+      <BusinessName />
+      <Prefix>MRS</Prefix>
+      <Suffix>DDS</Suffix>
+      <Address1>10600 WHITE ROCK ROAD</Address1>
+      <Address2>BUILDING 3</Address2>
+      <Address3>APARTMENT 4</Address3>
+      <City>RANCHO CORDOVA</City>
+      <State>CA</State>
+      <Zip>95670</Zip>
+      <Country>USA</Country>
+      <County>USA</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId>SO</RelationshipCodeId>
+      <EmailAddress>LAURIE.MEYER-COURTER-TAYLOR@GMAIL.COM</EmailAddress>
+      <DateOfBirth>1971-01-01</DateOfBirth>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>ABC12345789797797777</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>0.01</InitialAmount>
+      <InterestRate>75</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-21</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber>SB#157</SafeDepositBoxNumber>
+      <ExpiredDate>2000-06-30</ExpiredDate>
+      <OpenedBy>JOHN SMITH</OpenedBy>
+      <OpeningDate>2001-06-30</OpeningDate>
+      <UnpaidRent>75</UnpaidRent>
+      <DrillingFees>15</DrillingFees>
+      <TangibleItem>
+        <TangibleCategoryCodeId>JEWL</TangibleCategoryCodeId>
+        <TangiblePropertyDescription>1-GOLD TONED RING</TangiblePropertyDescription>
+      </TangibleItem>
+      <TangibleItem>
+        <TangiblePropertyDescription>ONE GOLD COIN</TangiblePropertyDescription>
+      </TangibleItem>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber>POLICY NUMBER 3</CertificateNumber>
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+    <UserDefinedField>
+      <UserDefinedFieldName>CONV-Tangible Cat Type Code</UserDefinedFieldName>
+      <UserDefinedFieldValue>BILL</UserDefinedFieldValue>
+    </UserDefinedField>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>AC01</PropertyCodeId>
+    <PropertyNumber>PROPERTY ID NUMBER</PropertyNumber>
+    <LastTransactionDate>2015-12-31</LastTransactionDate>
+    <MaturityDate>2015-12-31</MaturityDate>
+    <PropertyCodeDescription>ADDITIONAL PROPERTY DESCRIPTION</PropertyCodeDescription>
+    <AccountNumber>ACCOUNT NUMBER</AccountNumber>
+    <PolicyNumber>POLICY NUMBER</PolicyNumber>
+    <StatusIndicatorId />
+    <AlternateState>AZ</AlternateState>
+    <ATICode>ATI CODE</ATICode>
+    <Description>EXTRA DESCRIPTION</Description>
+    <IsRemovalIndicator />
+    <DatePaid>2018-11-01</DatePaid>
+    <StatePaid>AZ</StatePaid>
+    <AmountPaid>7500.15</AmountPaid>
+    <PaymentCheckNumber>PAYMENT CH</PaymentCheckNumber>
+    <Comments>OVEN MITT BAKERY: OVEN MITT BAKERY: THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>OVEN MITT BAKERY: OVEN MITT BAKERY: THIS IS THE NOTES FIELD.</Notes>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness>B</IsBusiness>
+      <OwnerIdType>F</OwnerIdType>
+      <OwnerIdNumber>464646464</OwnerIdNumber>
+      <FirstName />
+      <MiddleName />
+      <LastName />
+      <BusinessName>OVEN MITT BAKERY</BusinessName>
+      <Prefix />
+      <Suffix />
+      <Address1>106 MAIDEN STREET</Address1>
+      <Address2>BUILDING 2</Address2>
+      <Address3>STE 1700</Address3>
+      <City>MARION</City>
+      <State>CA</State>
+      <Zip>90201</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>1</SequenceNumber>
+      <RelationshipCodeId>AD</RelationshipCodeId>
+      <EmailAddress>OVENMITTBAKERY@GMAIL.COM</EmailAddress>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>23132131314411111111</DriverLicenseNumber>
+    </Owner>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>S</OwnerIdType>
+      <OwnerIdNumber>789456123</OwnerIdNumber>
+      <FirstName>LAURIE</FirstName>
+      <MiddleName>L</MiddleName>
+      <LastName>MEYERCOURTERTAYLOROR</LastName>
+      <BusinessName />
+      <Prefix>MRS</Prefix>
+      <Suffix>DDS</Suffix>
+      <Address1>10600 WHITE ROCK ROAD</Address1>
+      <Address2>BUILDING 3</Address2>
+      <Address3>APARTMENT 4</Address3>
+      <City>RANCHO CORDOVA</City>
+      <State>CA</State>
+      <Zip>95670</Zip>
+      <Country>USA</Country>
+      <County>USA</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>2</SequenceNumber>
+      <RelationshipCodeId>BF</RelationshipCodeId>
+      <EmailAddress>LAURIE.MEYER-COURTER-TAYLOR@GMAIL.COM</EmailAddress>
+      <DateOfBirth>1971-01-01</DateOfBirth>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>ABC12345789797797777</DriverLicenseNumber>
+    </Owner>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>S</OwnerIdType>
+      <OwnerIdNumber>131346548</OwnerIdNumber>
+      <FirstName>LEE</FirstName>
+      <MiddleName />
+      <LastName>YOUNG</LastName>
+      <BusinessName />
+      <Prefix />
+      <Suffix />
+      <Address1>578 1ST STREET</Address1>
+      <Address2 />
+      <Address3>3</Address3>
+      <City>CITY</City>
+      <State>IA</State>
+      <Zip>50001</Zip>
+      <Country>USA</Country>
+      <County />
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>3</SequenceNumber>
+      <RelationshipCodeId>BF</RelationshipCodeId>
+      <EmailAddress />
+      <DriverLicenseState />
+      <DriverLicenseNumber />
+    </Owner>
+    <Cash>
+      <InitialAmount>7500.15</InitialAmount>
+      <InterestRate>75</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-21</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber>POLICY NUMBER</CertificateNumber>
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>MS03</PropertyCodeId>
+    <PropertyNumber>U2018052200000000001</PropertyNumber>
+    <LastTransactionDate>2015-12-31</LastTransactionDate>
+    <PropertyCodeDescription>12345</PropertyCodeDescription>
+    <AccountNumber />
+    <PolicyNumber />
+    <StatusIndicatorId />
+    <AlternateState>AZ</AlternateState>
+    <ATICode />
+    <Description />
+    <IsRemovalIndicator />
+    <StatePaid />
+    <AmountPaid>0</AmountPaid>
+    <PaymentCheckNumber />
+    <Comments>THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>THIS IS THE NOTES FIELD.</Notes>
+    <DormancyDate>2018</DormancyDate>
+    <Owner>
+      <IsBusiness>B</IsBusiness>
+      <OwnerIdType>F</OwnerIdType>
+      <OwnerIdNumber>464646464</OwnerIdNumber>
+      <FirstName />
+      <MiddleName />
+      <LastName />
+      <BusinessName>OVEN MITT BAKERY</BusinessName>
+      <Prefix />
+      <Suffix />
+      <Address1>106 MAIDEN STREET</Address1>
+      <Address2>BUILDING 2</Address2>
+      <Address3>STE 1700</Address3>
+      <City>MARION</City>
+      <State>CA</State>
+      <Zip>90202</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>0</SequenceNumber>
+      <RelationshipCodeId />
+      <EmailAddress>OVENMITTBAKERY@GMAIL.COM</EmailAddress>
+      <DriverLicenseState>IA</DriverLicenseState>
+      <DriverLicenseNumber>23132131314411111111</DriverLicenseNumber>
+    </Owner>
+    <Cash>
+      <InitialAmount>1750</InitialAmount>
+      <InterestRate>0</InterestRate>
+    </Cash>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <ContactAttempt>
+      <PropertyContactAttemptTypeId>D</PropertyContactAttemptTypeId>
+      <PropertyContactAttemptDate>2018-05-22</PropertyContactAttemptDate>
+    </ContactAttempt>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber />
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+  </Property>
+  <Property xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <RecordCondition>1</RecordCondition>
+    <HolderName>DDL</HolderName>
+    <PropertyCodeId>TR01</PropertyCodeId>
+    <PropertyNumber>U20180523132217973</PropertyNumber>
+    <LastTransactionDate>2017-01-01</LastTransactionDate>
+    <MaturityDate>2017-01-01</MaturityDate>
+    <PropertyCodeDescription>PAYING AGENT ACCOUNTS</PropertyCodeDescription>
+    <AccountNumber>ACCT 1</AccountNumber>
+    <PolicyNumber>POLICY - 999</PolicyNumber>
+    <StatusIndicatorId />
+    <AlternateState />
+    <ATICode>ATI CODE -999</ATICode>
+    <Description>EXTRA DESCRIPTION</Description>
+    <IsRemovalIndicator />
+    <StatePaid />
+    <AmountPaid>0</AmountPaid>
+    <PaymentCheckNumber />
+    <Comments>JOE SMITH: THIS IS THE COMMENTS FIELD.</Comments>
+    <Notes>JOE SMITH: THIS IS THE NOTES FIELD.</Notes>
+    <DormancyDate>2020</DormancyDate>
+    <Owner>
+      <IsBusiness>B</IsBusiness>
+      <OwnerIdType>U</OwnerIdType>
+      <FirstName />
+      <MiddleName />
+      <LastName />
+      <BusinessName>AUTO PART SUPPLY STORE</BusinessName>
+      <Prefix />
+      <Suffix />
+      <Address1>5787 PARK AVE</Address1>
+      <Address2>APT 2</Address2>
+      <Address3>C/O JOE SMITH</Address3>
+      <City>PHOENIX</City>
+      <State>AZ</State>
+      <Zip>85007</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>1</SequenceNumber>
+      <RelationshipCodeId>SO</RelationshipCodeId>
+      <EmailAddress />
+      <DriverLicenseState />
+      <DriverLicenseNumber />
+    </Owner>
+    <Owner>
+      <IsBusiness />
+      <OwnerIdType>U</OwnerIdType>
+      <FirstName>JOE</FirstName>
+      <MiddleName>J</MiddleName>
+      <LastName>SMITH</LastName>
+      <BusinessName />
+      <Prefix>REV</Prefix>
+      <Suffix>III</Suffix>
+      <Address1>123 MAPLE AVE</Address1>
+      <Address2>BULID 2552</Address2>
+      <Address3 />
+      <City>PHOENIX</City>
+      <State>AZ</State>
+      <Zip>85007</Zip>
+      <Country>USA</Country>
+      <County>LIN</County>
+      <RPOStatus>0</RPOStatus>
+      <SequenceNumber>2</SequenceNumber>
+      <RelationshipCodeId>BF</RelationshipCodeId>
+      <EmailAddress />
+      <DateOfBirth>1955-01-01</DateOfBirth>
+      <DriverLicenseState />
+      <DriverLicenseNumber />
+    </Owner>
+    <Cash>
+      <InitialAmount>750</InitialAmount>
+      <InterestRate>1</InterestRate>
+    </Cash>
+    <SafeDeposit>
+      <SafeDepositBoxNumber />
+      <OpenedBy />
+      <UnpaidRent>0</UnpaidRent>
+      <DrillingFees>0</DrillingFees>
+    </SafeDeposit>
+    <Security>
+      <Shares>0</Shares>
+      <ParValue>0</ParValue>
+      <CUSIP />
+      <IssuerName />
+      <CertificateNumber>POLICY - 999</CertificateNumber>
+      <Series />
+      <SecuritiesStatusId />
+      <SecuritiesConfirmationRequired />
+      <SecuritiesTypeCodeId />
+      <SecuritiesDeliveryMethod />
+      <AgentCode />
+    </Security>
+    <UserDefinedField>
+      <UserDefinedFieldName>CONV-Owners</UserDefinedFieldName>
+      <UserDefinedFieldValue>1 U000000001, 2 U000000002</UserDefinedFieldValue>
+    </UserDefinedField>
+  </Property>
+</DataTransfer>

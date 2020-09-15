@@ -3,6 +3,7 @@ const { output } = require('codeceptjs');
 setWindowSize(1280, 960);
 
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
+let browser = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
 
 exports.config = {
   output: './output',
@@ -14,14 +15,15 @@ exports.config = {
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {
-        args: ['--ignore-certificate-errors', '--no-sandbox', '--window-size=1280,960'],
+        args: ['--ignore-certificate-errors'],
         defaultViewport: null,
+        executablePath: browser.browserSelect(data.login.Browser)
       },
     },
     Mochawesome: {
       uniqueScreenshotNames: true
     },
-   
+
 
 
   },
@@ -49,7 +51,14 @@ exports.config = {
           "code": true
         }
       },
-     
+
+      // "mocha-junit-reporter": {
+      //   "stdout": "./output/console.log",
+      //   "options": {
+      //     "mochaFile": "./output/result.xml"
+      //   },
+      //   "attachments": true //add screenshot for a failed test
+      // }
     }
   },
   bootstrap: null,
@@ -63,7 +72,29 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
+  // pauseOnFail: {
+  // },
+  // retryFailedStep: {
+  //   enabled: false,
+  //   retries: 2
+  // },
+  // autoDelay: {
+  //   enabled: false
+  // },
+  // commentStep: {
+  //   enabled: false,
+  //   registerGlobal: 'comment'
+  // },
+  // allure: {
+  //   outputDir: './output/allure'
+  // }
   },
   tests: './specs/*_test.js',
   name: 'CodeceptJS',
+
+  // rerun: {
+  //   // run 4 times until 1st success
+  //   minSuccess: 1,
+  //   maxReruns: 4,
+  // }
 }

@@ -152,6 +152,7 @@ module.exports = {
 
   StateSpecificOpen() {
     I.retry(2).click(this.locators.holderStateSpecific);
+    I.waitForText('State Specific Information', 30);
   },
 
   SpecificStateSelect(stateSpecific) {
@@ -161,6 +162,7 @@ module.exports = {
 
   StateSpecificSave() {
     I.retry(2).click(this.locators.holderStateSpecificSave);
+    I.waitForText('State specific information updated successfully', 30);
   },
 
   StateSpecificClose() {
@@ -171,6 +173,7 @@ module.exports = {
 
   AdditionalHolderInfo() {
     I.retry(2).click(this.locators.holderAdditionalInfo);
+    I.waitForText('Additional Holder Information', 20);
   },
 
   UDFAdd() {
