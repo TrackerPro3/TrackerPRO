@@ -1,1 +1,1 @@
-npx codeceptjs run --grep "@allholders" -c codecept.conf.js ./specs/holder_test.js --reporter mocha-multi
+npx codeceptjs run --grep "@allholders" -c codecept.conf.js ./specs/holder_test.js --reporter mocha-multi --plugins allure

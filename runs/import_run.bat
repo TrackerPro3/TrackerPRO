@@ -1,0 +1,1 @@
+npx codeceptjs run -c codecept.conf.js ./specs/import_test.js --reporter mocha-multi --plugins allure

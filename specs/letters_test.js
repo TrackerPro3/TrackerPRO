@@ -29,9 +29,14 @@ Before(async (I) => { // or Background
 
 
 
-var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Letter');
-td.forEach(function (value) {
-  Scenario("Generate '" + value.LetterType + "' + Letter @letter ", (I) => {
+// var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Letter');
+// td.forEach(function (value) {
+// Scenario("Generate '" + value.LetterType + "' + Letter @letter ", (I) => {
+
+    Scenario("Generate Letter @letter ", (I) => {
+    var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Letter');
+    td.forEach(function (value) {
+  
 
     I.say(value.LetterType, 'red')
     I_letter.OwnerNotificationMenu();
@@ -53,11 +58,13 @@ td.forEach(function (value) {
 
 
 var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'RyanMail');
-
 td.forEach(function (value) {
+Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
 
 
-  Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
+    // Scenario("Generate RyanMail Letter @ryanmail", (I) => {
+    // var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'RyanMail');
+    // td.forEach(function (value) {
 
     I_letter.OwnerNotificationMenu();
     I_letter.GenerateNotificationPage();

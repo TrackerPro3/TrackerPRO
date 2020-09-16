@@ -26,7 +26,6 @@ module.exports = {
   OwnerNotificationMenu() {
     I.waitForVisible(this.locators.ownerNotificationMenu,10);
     I.click(this.locators.ownerNotificationMenu);
-    I.waitForNavigation();
   },
 
   GenerateNotificationPage() {

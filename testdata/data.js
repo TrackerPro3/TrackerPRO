@@ -5,7 +5,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtracker01.trackerpro.cc/Juliett',
+        Build           :   'Echo',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
@@ -16,7 +16,7 @@ module.exports = {
     import : {
 
         MappingType     :   'XML',      // TEXT or XML
-        HolderName      :   'Test Holder Utility Company',
+        HolderName      :   'Test Holder Name 1',
         FileName        :   'uploads/DDL.XML'
     },
 
@@ -52,7 +52,7 @@ module.exports = {
     
     letter : {
 
-        HolderName      :   'WOF'
+        HolderName      :   'DDL'
 
     },
 

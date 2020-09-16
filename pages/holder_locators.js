@@ -50,12 +50,12 @@ module.exports = {
 
   HolderOverview() {
     I.retry(2).click(this.locators.holderOverview);
-    I.retry(2).waitForNavigation();
+    I.waitForNavigation();
   },
 
   NewHolder() {
     I.retry(2).click(this.locators.holderNew);
-    I.retry(2).waitForNavigation();
+    I.waitForNavigation();
     I.waitForText('Holder Detail', 30);
   },
 
@@ -167,7 +167,7 @@ module.exports = {
 
   StateSpecificClose() {
     I.retry(2).click(this.locators.holderStateSpecificClose);
-    I.retry(2).waitForNavigation();
+    I.waitForNavigation();
     I.waitForText('Holder Detail', 30);
   },
 
@@ -223,7 +223,7 @@ module.exports = {
 
   AdditionalHolderInfoClose() {
     I.retry(2).click(this.locators.holderAdditionalInfoClose);
-    I.retry(2).waitForNavigation();
+    I.waitForNavigation();
     I.waitForText('Holder Detail', 20);
   },
 

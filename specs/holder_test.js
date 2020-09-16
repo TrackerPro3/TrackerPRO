@@ -30,7 +30,6 @@ Scenario('Test Add Single Holder @oneholder', (I) => {
     I_holder.HolderOverview();  //CreateHolder
     I.see('Holder Overview');
     I_holder.NewHolder();
-    I.waitForNavigation();
     I.see('Holder Detail');
     I_holder.HolderName(data.holder.HolderName);
     I_holder.EntityName(data.holder.EntityName);
@@ -73,11 +72,15 @@ Scenario('Test Add Single Holder @oneholder', (I) => {
 });
 
 
-var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Holder');
-td.forEach(function (value) {
+// var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Holder');
+// td.forEach(function (value) {
+// Scenario("Test Multiple Holder '" + value.HolderType  + "' @allholders", (I) => {
 
-    // Scenario("Test Multiple Holder @allholders", (I) => {
-        Scenario("Test Multiple Holder '" + value.HolderType  + "' @allholders", (I) => {
+
+    Scenario("Test Multiple Holder @allholders", (I) => {        
+    var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Holder');
+    td.forEach(function (value) {
+
 
         I.say(value.HolderType);    //CreateHolder
         I_holder.HolderOverview();

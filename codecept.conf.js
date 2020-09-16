@@ -76,9 +76,9 @@ exports.config = {
   //   enabled: false,
   //   retries: 2
   // },
-  // autoDelay: {
-  //   enabled: false
-  // },
+  autoDelay: {
+    enabled: true
+  },
   // commentStep: {
   //   enabled: false,
   //   registerGlobal: 'comment'

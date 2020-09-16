@@ -49,11 +49,11 @@ module.exports = {
   UploadFile() {
     I.waitForEnabled(this.locators.uploadFile,10);
     I.click(this.locators.uploadFile);
-    I.wait(2);
   },
 
   ImportFile() {
     I.waitForEnabled(this.locators.importFile,50);
+    I.wait(2);
     I.click(this.locators.importFile);
     I.waitForText('Report History',30);
   }
