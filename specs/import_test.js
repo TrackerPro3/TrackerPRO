@@ -32,8 +32,8 @@ Before(async (I) => { // or Background
 
 
 
-  Scenario("Import ", (I) => {
-    I_import.DataMenu();
+  Scenario("Import @import", (I) => {
+    // I_import.DataMenu();
     I_import.ImportDataPage();
     I_import.SelectMapping(data.import.MappingType,data.import.HolderName);
     I_import.BrowseFile(data.import.FileName);

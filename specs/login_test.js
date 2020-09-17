@@ -3,7 +3,7 @@ Feature('TrackerPRO Login');
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 
-Scenario('Test Login', async (I) => {
+Scenario('Test Login @login', async (I) => {
 
   I_login.SelectBuild(data.login.Build);   // input Build Name
   I.see('Ryan');

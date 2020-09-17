@@ -70,22 +70,22 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
-  // pauseOnFail: {
-  // },
-  // retryFailedStep: {
-  //   enabled: false,
-  //   retries: 2
-  // },
-  autoDelay: {
-    enabled: true
-  },
-  // commentStep: {
-  //   enabled: false,
-  //   registerGlobal: 'comment'
-  // },
-  allure: {
-    outputDir: './output/allure'
-  }
+    // pauseOnFail: {
+    // },
+    // retryFailedStep: {
+    //   enabled: false,
+    //   retries: 2
+    // },
+    autoDelay: {
+      enabled: true
+    },
+    // commentStep: {
+    //   enabled: false,
+    //   registerGlobal: 'comment'
+    // },
+    allure: {
+      outputDir: './output/allure'
+    }
   },
   tests: './specs/*_test.js',
   name: 'CodeceptJS',
