@@ -2,16 +2,17 @@
         // executablePath: 'C:/Program Files/internet explorer/iexplore.exe'
         // executablePath: 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
 
+        // executablePath: browser.browserSelect(data.login.Browser)
 
 
-// use for of loops
+// // use for of loops
 
-var states = ['CA', 'MA'];
-  var x;
-  for (x of states) {
-    I.scrollTo("//div[contains(text(),'" + x + "')]");
-    I.click("//div[contains(text(),'" + x + "')]");
-  }
+// var states = ['CA', 'MA'];
+//   var x;
+//   for (x of states) {
+//     I.scrollTo("//div[contains(text(),'" + x + "')]");
+//     I.click("//div[contains(text(),'" + x + "')]");
+//   }
 
 
   // npx codeceptjs run --profile https://azrtracker01.trackerpro.cc/Juliett -c jenkins.conf.js ./specs/login_test.js --steps --verbose --reporter mochawesome

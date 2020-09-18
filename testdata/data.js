@@ -5,19 +5,19 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtracker01.trackerpro.cc/Oscar',
+        Build           :   'India',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
-        Browser         :   'Chrome'
+        Browser         :   'Chrome'    // Chrome or Edge or Leave it Blank for Chromium
  
     },
 
     import : {
 
-        MappingType     :   'XML',      // TEXT or XML
-        HolderName      :   'Test Holder Name 1',
-        FileName        :   'uploads/DDL.XML'
+        MappingType     :   'TEXT',      // TEXT or XML
+        HolderName      :   'DDL',
+        FileName        :   'uploads/Class.txt'   // Do not remove uploads/
     },
 
     holder : {
@@ -64,7 +64,7 @@ module.exports = {
         HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
         ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
-        DatePaid        :   '08202020',     // N or Date
+        DatePaid        :   '',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
         StateList       :   'RI',   //['AK','KS','MD','MT','ND','UT','VT']
         StateList1      :   ['NY'],   //['AK','KS','MD','MT','ND','UT','VT']
@@ -80,7 +80,7 @@ module.exports = {
         HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
         ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
-        DatePaid        :   '09012020',     // N or Date
+        DatePaid        :   '',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
         StateList       :   ['KS','MD','MT','ND','UT','VT']
 
