@@ -5,11 +5,11 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtprelw19s16.trackerpro.cc/8.2.01',
+        Build           :   '',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
-        Browser         :   'Chrome'    // Chrome or Edge or Leave it Blank for Chromium
+        Browser         :   'Edge'    // Chrome or Edge or Leave it Blank for Chromium
  
     },
 
