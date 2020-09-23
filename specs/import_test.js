@@ -1,8 +1,11 @@
+
 Feature('Import Data');
 
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let I_import = require('C:/Users/RC08508/CodeceptJS/pages/import_locators.js');
+let pup = require('../utilities/pup.js');
+
 
 
 
@@ -29,6 +32,11 @@ Before(async (I) => { // or Background
   I.waitForText('Home', 30);
   I.see('Home');
 });
+
+After(() => {
+  pup.closeBrowser();
+})
+
 
 
 

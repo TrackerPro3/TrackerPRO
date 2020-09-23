@@ -2,6 +2,8 @@ Feature('TrackerPRO Login');
 
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
+let pup = require('C:/Users/RC08508/CodeceptJS/utilities/pup.js');
+
 
 Scenario('Test Login @login', async (I) => {
 

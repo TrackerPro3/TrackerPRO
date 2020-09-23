@@ -3,7 +3,7 @@ const { output } = require('codeceptjs');
 setWindowSize(1280, 960);
 
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
-let browser = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
+let browserselect = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
 
 exports.config = {
   output: './output',
@@ -11,13 +11,14 @@ exports.config = {
     Puppeteer: {
       url: data.login.Build,
       show: true,
+      restart: true,
       waitForNavigation: "domcontentloaded",
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {
         args: ['--ignore-certificate-errors'],
         defaultViewport: null,
-        executablePath: browser.browserSelect(data.login.Browser)
+        executablePath: browserselect.browserSelect(data.login.Browser),
       },
     },
     Mochawesome: {

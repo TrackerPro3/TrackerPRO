@@ -4,6 +4,7 @@ let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let I_letter = require('C:/Users/RC08508/CodeceptJS/pages/letter_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
+let pup = require('../utilities/pup.js');
 
 
 
@@ -26,6 +27,11 @@ Before(async (I) => { // or Background
   I.waitForText('Home', 30);
   I.see('Home');
 });
+
+After(() => {
+  pup.closeBrowser();
+})
+
 
 
 
@@ -96,3 +102,30 @@ Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
   });
 
 })
+
+
+
+Scenario("RyanMail Status Page @ryanmailPage ", (I) => {
+ 
+I.click('#ctl00_reportHistoryLink');
+I.waitForText('Report History',30);
+I.pressKey(['Shift']);
+I.click('//a[@id="grid-refresh"]//i[@class="fa fa-refresh"]');
+pause();
+I.click('(//a[contains(text(),"Template (RyanMail)")])[1]');
+I.click('//span[contains(text(),"Send")]');
+I.waitForText('Report History',30);
+I.click('RyanMail')
+I.click('#ctl00_cphToolbarItemsRight_toolbarViewButton');
+
+
+
+// (//button[@type="button" and @class="btn btn-link position-relative"])[3]
+//i[@class="fa-fw mr-2 fa fa-download ng-star-inserted"]
+
+
+
+
+
+});
+
