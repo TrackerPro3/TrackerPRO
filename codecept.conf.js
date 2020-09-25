@@ -1,7 +1,8 @@
-const { setWindowSize } = require('@codeceptjs/configure');
-const { output } = require('codeceptjs');
-setWindowSize(1280, 960);
+// const { setWindowSize } = require('@codeceptjs/configure');
+// const { output } = require('codeceptjs');
+// setWindowSize(1280, 960);
 
+// let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let browserselect = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
 
@@ -11,15 +12,19 @@ exports.config = {
     Puppeteer: {
       url: data.login.Build,
       show: true,
-      restart: true,
+      // restart: true,
+      keepCookies: true,
       waitForNavigation: "domcontentloaded",
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {
-        args: ['--ignore-certificate-errors'],
+        args: ['--ignore-certificate-errors', '--window-size=1280,960'],
         defaultViewport: null,
         executablePath: browserselect.browserSelect(data.login.Browser),
       },
+    },
+    "FileSystem": {
+
     },
     Mochawesome: {
       uniqueScreenshotNames: true
@@ -86,6 +91,35 @@ exports.config = {
     // },
     allure: {
       outputDir: './output/allure'
+    },
+    autoLogin: {
+      enabled: false,
+      saveToFile: true, // set this to false if you don't need to pass cookies to other sessions
+      inject: 'loginAs', // use `loginAs` instead of login
+      users: {
+        Surya: {
+          login: async (I) => {
+            I.amOnPage(data.login.Build);
+            I.fillField('ctl00$cphBody$txtUsername','suryateja.davuluri@ryan.com');
+            I.click('Next');
+            I.fillField('#ctl00_cphBody_txtPassword','Password');
+            I.click('Next');
+            I.click("//div[contains(text(),'" + data.login.Org + "')]");
+            I.click('.tpro-btn-icon-label');
+
+          },
+          check: (I) => {
+            I.seeInCurrentUrl('/Home.aspx');
+          },
+          fetch: () => { 
+            return I.executeScript(() => localStorage.getItem('session_id'));
+          }, // empty function
+          restore: () => { 
+            I.amOnPage(data.login.Build);
+        I.executeScript((session) => localStorage.setItem('session_id', session), session);
+          }, // empty funciton
+        },
+      }
     }
   },
   tests: './specs/*_test.js',

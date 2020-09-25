@@ -5,11 +5,11 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   '',
+        Build           :   'Delta',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
-        Browser         :   'Edge'    // Chrome or Edge or Leave it Blank for Chromium
+        Browser         :   'Chrome'    // Chrome or Edge or Leave it Blank for Chromium
  
     },
 
