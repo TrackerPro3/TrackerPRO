@@ -1,0 +1,1 @@
+npx codeceptjs run --grep "@files" -c codecept.conf.js ./specs/filetypes_test.js --reporter mocha-multi --plugins allure

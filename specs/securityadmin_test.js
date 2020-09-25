@@ -1,5 +1,5 @@
 
-Feature('File Types');
+Feature('Security Administration');
 
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
@@ -29,7 +29,7 @@ After(() => {
     pup.closeBrowser();
 })
 
-Scenario("Test File upload types @files", (I) => {
+Scenario("Test File Upload types @files", (I) => {
     I.click('//a[@class="dropdown-toggle"][contains(text(),"Security")]');
     I.click('//a[contains(text(),"Security Administration")]');
     I.waitForNavigation();
@@ -41,9 +41,9 @@ Scenario("Test File upload types @files", (I) => {
         I.scrollTo('//button[@id="ctl00_cphBody_fileUploadTypeGrid_add"]');
         I.click('//button[@id="ctl00_cphBody_fileUploadTypeGrid_add"]');
         I.waitForText('File Type', 10);
-        I.click('#ctl00_cphBody_txtFileExtension');
+        // I.click('#ctl00_cphBody_txtFileExtension');
         I.fillField('#ctl00_cphBody_txtFileExtension',value.Extension);
-        I.click('#ctl00_cphBody_txtFileMimeType');
+        // I.click('#ctl00_cphBody_txtFileMimeType');
         I.fillField('#ctl00_cphBody_txtFileMimeType',value.MimeType);
         I.click('//div[@id="tpro-fileType-dialog"]//button[@class="btn btn-primary tpro_standard_button"][contains(text(),"OK")]')
     });
