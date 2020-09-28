@@ -129,3 +129,50 @@ I.click('#ctl00_cphToolbarItemsRight_toolbarViewButton');
 
 });
 
+Scenario("RyanMail Status Page2", async (I) => {
+ 
+  I.click('#ctl00_reportHistoryLink');
+  I.waitForText('Report History',30);
+  I.wait(3);
+  pup.holdKey();
+  I.click('//a[@id="grid-refresh"]//i[@class="fa fa-refresh"]');
+  pup.releaseKey();
+  I.wait(5)
+  I.click('(//a[contains(text(),"Template (RyanMail)")])[1]');
+  I.wait(30)
+
+
+  pup.iframe();
+
+
+  // I.click('//span[contains(text(),"Send")]');
+  // I.waitForText('Report History',30);
+  // I.click('#ctl00_cphToolbarItemsRight_toolbarViewButton');
+//   await within({frame: "#aceFrame"}, () => {
+//     I.wait(5);
+//     I.click('(//button[@type="button" and @class="btn btn-link position-relative"])[3]')
+
+//     I.click('//span[contains(text(),"Recipient")]')
+// });
+// pause();
+// I.switchTo('#aceFrame');
+// pause();
+// let pagesource = await I.grabSource();
+// console.log(pagesource);
+
+// I.switchTo();
+// let pagesource2 = await I.grabSource();
+// console.log(pagesource2);
+
+
+// I.click('//span[contains(text(),"Recipient")]')
+
+
+I.wait(10);
+
+});
+
+
+// After(() => {
+//   pup.closeBrowser();
+// })

@@ -1,5 +1,5 @@
 
-Feature('Export Data');
+Feature('Report History');
 
 let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
@@ -10,7 +10,7 @@ After(() => {
   pup.closeBrowser();
 })
 
-  Scenario("Export", async (I,loginAs) => {
+  Scenario("Download Files", async (I,loginAs) => {
     loginAs('Surya');
     I.click('#ctl00_reportHistoryLink');
     I.waitForNavigation();

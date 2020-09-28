@@ -5,7 +5,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'Delta',
+        Build           :   'https://azrtracker01.trackerpro.cc/Oscar',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
@@ -15,9 +15,16 @@ module.exports = {
 
     import : {
 
-        MappingType     :   'TEXT',      // TEXT or XML
-        HolderName      :   'DDL',
-        FileName        :   'uploads/Class.txt'   // Do not remove uploads/
+        MappingType     :   'XML',      // TEXT or XML
+        HolderName      :   '',
+        FileName        :   'uploads/DDL.XML'   // Do not remove uploads/
+    },
+
+    filemapping : {
+
+        MappingName     :   'Test File Mapping',
+        MappingDesc     :   'Test File Mapping Desc',
+        MappingType     :   'Excel'     // Excel or Delimited or Fixed
     },
 
     holder : {
