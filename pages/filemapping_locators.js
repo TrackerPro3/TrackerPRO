@@ -15,6 +15,7 @@ module.exports = {
     mappingName: '//input[@id="ctl00_cphBody_txtMappingName"]',
     mappingDesc: '//textarea[@id="ctl00_cphBody_txtFileMappingDesc"]',
     mappingType: '//input[@id="cboFileFormat-combo-text"]',
+    delimiterType: '#ctl00_cphBody_txtDelimiter',
     mappingfieldAdd: '//button[@id="ctl00_cphBody_fileMappingDataJsonGrid_add"]',
     externalField: '#ctl00_cphBody_txtExternalColumn',
     columnIndex: '#ctl00_cphBody_txtColumnIndexField',
@@ -46,10 +47,13 @@ MappingDesc(MappingDesc) {
     I.fillField(this.locators.mappingDesc, MappingDesc);
 },
 
-MappingType(MappingType) {
+MappingType(MappingType,Delimiter) {
     I.click(this.locators.mappingType);
     I.fillField(this.locators.mappingType, MappingType);
     I.pressKey(['Tab', 'Tab']);
+    if(MappingType=='Delimited') {
+        I.fillField(this.locators.delimiterType,Delimiter);
+    }
 },
 
 AddMappingFields() {

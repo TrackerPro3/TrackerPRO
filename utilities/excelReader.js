@@ -8,7 +8,9 @@ class xlReader {
         var workbook = XLXS.readFile(filePath);
         var worksheet = workbook.Sheets[sheetName];
         var a = XLXS.utils.sheet_to_json(worksheet);
+        console.log(a);
         return a;
+      
 
     }
 

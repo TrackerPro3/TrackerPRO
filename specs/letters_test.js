@@ -1,7 +1,7 @@
 Feature('Owner Notification');
 
-let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
-let I_letter = require('C:/Users/RC08508/CodeceptJS/pages/letter_locators.js');
+let Login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
+let Letters = require('C:/Users/RC08508/CodeceptJS/pages/letter_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
 let pup = require('../utilities/pup.js');
@@ -9,23 +9,12 @@ let pup = require('../utilities/pup.js');
 
 
 Before(async (I) => { // or Background
-  I_login.SelectBuild(data.login.Build);   // input Build Name
-  I.waitForText('Ryan', 30);
-  I_login.Username(data.login.Username);    // input Username
-  I.click('Next');
-  I.waitForNavigation();
-  I.waitForText('Forgot your password?', 30);
-  I_login.Password(data.login.defaultPassword);
-  I.click('Next');
-  I.waitForNavigation();
-  let alert = await I.grabTextFrom(I_login.locators.alertContent);
-  I_login.ActualPassword(alert, data.login.Password);   // input Password
-  let title = await I.grabTitle();
-  I_login.MustChange(title, data.login.newPassword, data.login.newPassword);
-  let page = await I.grabTitle();
-  I_login.OrgPage(page, data.login.Org);     // input Org Name
-  I.waitForText('Home', 30);
-  I.see('Home');
+  Login.SelectBuild(data.login.Build);   // input Build Name
+  Login.Username(data.login.Username);    // input Username
+  Login.Password(data.login.defaultPassword);
+  Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
+  Login.MustChange(data.login.newPassword);
+  Login.OrgPage(data.login.Org);
 });
 
 After(() => {
@@ -45,17 +34,17 @@ After(() => {
   
 
     I.say(value.LetterType, 'red')
-    I_letter.OwnerNotificationMenu();
-    I_letter.GenerateNotificationPage();
-    I_letter.SelectHolder(data.letter.HolderName);
-    I_letter.SelectAllStates();
-    I_letter.SelectLetterCategory(value.LetterCategory);
-    I_letter.SelectLetterTemplate(value.LetterTemplate);
+    Letters.OwnerNotificationMenu();
+    Letters.GenerateNotificationPage();
+    Letters.SelectHolder(data.letter.HolderName);
+    Letters.SelectAllStates();
+    Letters.SelectLetterCategory(value.LetterCategory);
+    Letters.SelectLetterTemplate(value.LetterTemplate);
     I.wait(2);
     I.checkOption(value.Option1);
     I.checkOption(value.Option2);
-    I_letter.FinalizeLetter();
-    I_letter.GenerateLetter();
+    Letters.FinalizeLetter();
+    Letters.GenerateLetter();
     I.see('Report History');
 
   });
@@ -72,15 +61,15 @@ Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
     // var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'RyanMail');
     // td.forEach(function (value) {
 
-    I_letter.OwnerNotificationMenu();
-    I_letter.GenerateNotificationPage();
+    Letters.OwnerNotificationMenu();
+    Letters.GenerateNotificationPage();
     I.waitForText('Generate Notification Letters', 30);
     I.wait(5);
-    I_letter.SelectHolder(data.letter.HolderName);
+    Letters.SelectHolder(data.letter.HolderName);
     I.wait(5);
-    I_letter.SelectAllStates();
-    I_letter.SelectLetterCategory(value.LetterCategory);
-    I_letter.SelectLetterTemplate(value.LetterTemplate);
+    Letters.SelectAllStates();
+    Letters.SelectLetterCategory(value.LetterCategory);
+    Letters.SelectLetterTemplate(value.LetterTemplate);
     I.wait(2);
     I.checkOption(value.Option1);
     I.checkOption(value.Option2);
@@ -89,14 +78,14 @@ Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
     I.wait(3);
     I.checkOption('Override Return Address');
     I.checkOption('Override Notification Type');
-    I_letter.FinalizeLetter();
+    Letters.FinalizeLetter();
     I.wait(2);
-    I_letter.GenerateLetter();
+    Letters.GenerateLetter();
     I.wait(2);
     if (value.LetterType.indexOf('DDL') != -1) {
       I.checkOption('By selecting the checkbox, I agree to the letter format change chosen knowing it could affect the way the letter looks or the number of pages generated.');
     }
-    I_letter.ConfirmRyanMail();
+    Letters.ConfirmRyanMail();
     I.see('Report History');
 
   });

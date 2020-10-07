@@ -1,81 +1,70 @@
 Feature('TrackerPRO Holder');
 
-let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
-let I_holder = require('C:/Users/RC08508/CodeceptJS/pages/holder_locators.js');
+let Login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
+let Holder = require('C:/Users/RC08508/CodeceptJS/pages/holder_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
 let pup = require('../utilities/pup.js');
 
 
 Before(async (I) => { // or Background
-    I_login.SelectBuild(data.login.Build);   // input Build Name
-    I.waitForText('Ryan', 30);
-    I_login.Username(data.login.Username);    // input Username
-    I.click('Next');
-    I.waitForNavigation();
-    I.waitForText('Forgot your password?', 30);
-    I_login.Password(data.login.defaultPassword);
-    I.click('Next');
-    I.waitForNavigation();
-    let alert = await I.grabTextFrom(I_login.locators.alertContent);
-    I_login.ActualPassword(alert, data.login.Password);   // input Password
-    let title = await I.grabTitle();
-    I_login.MustChange(title, data.login.newPassword, data.login.newPassword);
-    let page = await I.grabTitle();
-    I_login.OrgPage(page, data.login.Org);     // input Org Name
-    I.waitForText('Home', 30);
-    I.see('Home');
+    Login.SelectBuild(data.login.Build);   // input Build Name
+    Login.Username(data.login.Username);    // input Username
+    Login.Password(data.login.defaultPassword);
+    Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
+    Login.MustChange(data.login.newPassword);
+    Login.OrgPage(data.login.Org);
 });
 
 After(() => {
     pup.closeBrowser();
-  })
+})
 
 
 Scenario('Test Add Single Holder @oneholder', (I) => {
-    
-    I_holder.HolderOverview();  //CreateHolder
-    I.see('Holder Overview');
-    I_holder.NewHolder();
-    I.see('Holder Detail');
-    I_holder.HolderName(data.holder.HolderName);
-    I_holder.EntityName(data.holder.EntityName);
-    I_holder.Classification(data.holder.Classification);
-    I_holder.FEIN(data.holder.FEIN);
-    I_holder.Address(data.holder.Address);
-    I_holder.City(data.holder.City);
-    I_holder.State(data.holder.State);
-    I_holder.Zip(data.holder.Zip);
-    I_holder.INCState(data.holder.INCState);
-    I_holder.SaveHolder();
 
-    I_holder.AddContact();   // Contact
+    Holder.HolderOverview();  //CreateHolder
+    I.see('Holder Overview');
+    Holder.NewHolder();
+    I.see('Holder Detail');
+    Holder.HolderName(data.holder.HolderName);
+    Holder.EntityName(data.holder.EntityName);
+    Holder.Classification(data.holder.Classification);
+    Holder.FEIN(data.holder.FEIN);
+    Holder.Address(data.holder.Address);
+    Holder.City(data.holder.City);
+    Holder.State(data.holder.State);
+    Holder.Zip(data.holder.Zip);
+    Holder.INCState(data.holder.INCState);
+    Holder.SaveHolder();
+
+    Holder.AddContact();   // Contact
     I.checkOption(data.holder.ContactType);
     I.seeCheckboxIsChecked(data.holder.ContactType);
-    I_holder.ContactEmail(data.holder.ContactEmail);
-    I_holder.ContactName(data.holder.ContactName);
-    I_holder.ContactState(data.holder.ContactState);
-    I_holder.ContactSave();
+    Holder.ContactEmail(data.holder.ContactEmail);
+    Holder.ContactName(data.holder.ContactName);
+    Holder.ContactState(data.holder.ContactState);
+    Holder.ContactSave();
     I.wait(2);
-    I_holder.SaveHolder();
-    
-    I_holder.StateSpecificOpen();    //State Specific
-    I_holder.SpecificStateSelect(data.holder.StateSpecific);
-    I_holder.StateSpecificSave();
-    I_holder.StateSpecificClose();
+    Holder.SaveHolder();
 
-    I_holder.AdditionalHolderInfo();    // Additional Holder Info
-    I_holder.UDFAdd();
-    I_holder.UDFAddName(data.holder.UDFName);
-    I_holder.UDFSave();
+    Holder.StateSpecificOpen();    //State Specific
+    Holder.SpecificStateSelect(data.holder.StateSpecific);
+    Holder.StateSpecificSave();
+    Holder.StateSpecificClose();
+
+    Holder.AdditionalHolderInfo();    // Additional Holder Info
+    Holder.UDFAdd();
+    Holder.UDFAddName(data.holder.UDFName);
+    Holder.UDFSave();
     I.wait(2);
-    I_holder.StatIndAdd();
-    I_holder.StatIndName(data.holder.StatIndName);
-    I_holder.StatIndDesc(data.holder.StatIndDesc);
-    I_holder.StatIndSave();
+    Holder.StatIndAdd();
+    Holder.StatIndName(data.holder.StatIndName);
+    Holder.StatIndDesc(data.holder.StatIndDesc);
+    Holder.StatIndSave();
     I.wait(2);
-    I_holder.AdditionalHolderInfoSave();
-    I_holder.AdditionalHolderInfoClose();
+    Holder.AdditionalHolderInfoSave();
+    Holder.AdditionalHolderInfoClose();
 });
 
 
@@ -84,52 +73,52 @@ Scenario('Test Add Single Holder @oneholder', (I) => {
 // Scenario("Test Multiple Holder '" + value.HolderType  + "' @allholders", (I) => {
 
 
-    Scenario("Test Multiple Holder @allholders", (I) => {        
+Scenario("Test Multiple Holder @allholders", (I) => {
     var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Holder');
     td.forEach(function (value) {
 
 
         I.say(value.HolderType);    //CreateHolder
-        I_holder.HolderOverview();
+        Holder.HolderOverview();
         I.see('Holder Overview');
-        I_holder.NewHolder();
+        Holder.NewHolder();
         I.see('Holder Detail');
-        I_holder.HolderName(value.HolderName);
-        I_holder.EntityName(value.Entity);
-        I_holder.Classification(value.Classification);
-        I_holder.FEIN(value.FEIN);
-        I_holder.Address(value.Address);
-        I_holder.City(value.City);
-        I_holder.State(value.State);
-        I_holder.Zip(value.Zip);
-        I_holder.INCState(value.INCState);
-        I_holder.SaveHolder();
+        Holder.HolderName(value.HolderName);
+        Holder.EntityName(value.Entity);
+        Holder.Classification(value.Classification);
+        Holder.FEIN(value.FEIN);
+        Holder.Address(value.Address);
+        Holder.City(value.City);
+        Holder.State(value.State);
+        Holder.Zip(value.Zip);
+        Holder.INCState(value.INCState);
+        Holder.SaveHolder();
 
-        I_holder.AddContact();  //Contact
+        Holder.AddContact();  //Contact
         I.retry(2).checkOption(value.ContactType);
         I.retry(2).seeCheckboxIsChecked(value.ContactType);
-        I_holder.ContactEmail(value.ContactEmail);
-        I_holder.ContactName(value.ContactName);
-        I_holder.ContactState(value.ContactState);
-        I_holder.ContactSave();
+        Holder.ContactEmail(value.ContactEmail);
+        Holder.ContactName(value.ContactName);
+        Holder.ContactState(value.ContactState);
+        Holder.ContactSave();
         I.wait(2);
-        I_holder.SaveHolder();
+        Holder.SaveHolder();
 
-        I_holder.StateSpecificOpen(); //State Specific
-        I_holder.SpecificStateSelect(value.StateSpecific);
-        I_holder.StateSpecificSave();
-        I_holder.StateSpecificClose();
+        Holder.StateSpecificOpen(); //State Specific
+        Holder.SpecificStateSelect(value.StateSpecific);
+        Holder.StateSpecificSave();
+        Holder.StateSpecificClose();
 
-        I_holder.AdditionalHolderInfo();  // Additional Holder Info
-        I_holder.UDFAdd();
-        I_holder.UDFAddName(value.UDFName);
-        I_holder.UDFSave();
-        I_holder.StatIndAdd();
-        I_holder.StatIndName(value.StatIndName);
-        I_holder.StatIndDesc(value.StatIndDesc);
-        I_holder.StatIndSave();
-        I_holder.AdditionalHolderInfoSave();
-        I_holder.AdditionalHolderInfoClose();
+        Holder.AdditionalHolderInfo();  // Additional Holder Info
+        Holder.UDFAdd();
+        Holder.UDFAddName(value.UDFName);
+        Holder.UDFSave();
+        Holder.StatIndAdd();
+        Holder.StatIndName(value.StatIndName);
+        Holder.StatIndDesc(value.StatIndDesc);
+        Holder.StatIndSave();
+        Holder.AdditionalHolderInfoSave();
+        Holder.AdditionalHolderInfoClose();
     });
 })
 

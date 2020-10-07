@@ -1,8 +1,7 @@
 // const { setWindowSize } = require('@codeceptjs/configure');
 // const { output } = require('codeceptjs');
 // setWindowSize(1280, 960);
-
-// let I_login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
+// let Login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let browserselect = require('C:/Users/RC08508/CodeceptJS/utilities/browser.js');
 
@@ -33,14 +32,15 @@ exports.config = {
 
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    // Login: 'C:/Users/RC08508/CodeceptJS/pages/login_locators.js'
   },
   "mocha": {
     "reporterOptions": {
       "codeceptjs-cli-reporter": {
         "stdout": "-",
         "options": {
-          "verbose": false,
+          "verbose": true,
           "steps": true,
         }
       },
@@ -94,32 +94,34 @@ exports.config = {
     },
     autoLogin: {
       enabled: false,
-      saveToFile: true, // set this to false if you don't need to pass cookies to other sessions
+      saveToFile: false, // set this to false if you don't need to pass cookies to other sessions
       inject: 'loginAs', // use `loginAs` instead of login
       users: {
         Surya: {
-          login: async (I) => {
-            I.amOnPage(data.login.Build);
-            I.fillField('ctl00$cphBody$txtUsername','suryateja.davuluri@ryan.com');
-            I.click('Next');
-            I.fillField('#ctl00_cphBody_txtPassword','Password');
-            I.click('Next');
-            I.click("//div[contains(text(),'" + data.login.Org + "')]");
-            I.click('.tpro-btn-icon-label');
+          login: async (Login) => {
+            Login.amOnPage(data.login.Build);
+            // I.fillField('ctl00$cphBody$txtUsername', 'suryateja.davuluri@ryan.com');
+            // I.click('Next');
+            // I.fillField('#ctl00_cphBody_txtPassword', 'Password');
+            // I.click('Next');
+            // I.click("//div[contains(text(),'" + data.login.Org + "')]");
+            // I.click('.tpro-btn-icon-label');
+            // Login.SelectBuild(data.login.Build);   // input Build Name
+            Login.Username(data.login.Username);    // input Username
+            Login.Password(data.login.defaultPassword); // input default Password
+            Login.ActualPassword(await Login.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
+            Login.MustChange(data.login.newPassword);   // input New Password
+            Login.OrgPage(data.login.Org);
 
           },
-          check: (I) => {
-            I.seeInCurrentUrl('/Home.aspx');
+          check: (Login) => {
+            Login.seeInCurrentUrl('/Home.aspx');
           },
-          fetch: () => { 
-            return I.executeScript(() => localStorage.getItem('session_id'));
-          }, // empty function
-          restore: () => { 
-            I.amOnPage(data.login.Build);
-        I.executeScript((session) => localStorage.setItem('session_id', session), session);
-          }, // empty funciton
+          fetch: () => {}, // empty function
+          restore: () => {}, // empty funciton
         },
       }
+      
     }
   },
   tests: './specs/*_test.js',

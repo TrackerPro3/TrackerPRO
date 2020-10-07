@@ -5,7 +5,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtracker01.trackerpro.cc/Oscar',
+        Build           :   'https://cdrdevapp16.ryanco.com/Pinned2',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
@@ -16,20 +16,22 @@ module.exports = {
     import : {
 
         MappingType     :   'XML',      // TEXT or XML
-        HolderName      :   '',
+        HolderName      :   'Test Holder Name 1',
         FileName        :   'uploads/DDL.XML'   // Do not remove uploads/
     },
 
     filemapping : {
 
-        MappingName     :   'Test File Mapping',
-        MappingDesc     :   'Test File Mapping Desc',
-        MappingType     :   'Excel'     // Excel or Delimited or Fixed
+        MappingName     :   'Test File Mapping Delimited',
+        MappingDesc     :   'Test File Mapping Description Delimited',
+        MappingType     :   'Delimited',     // Excel or Delimited or Fixed
+        Delimiter       :   '|',
+        MappingSheet    :   'FileMappingDelimited'     // FileMappingDelimted or FileMappingExcel
     },
 
     holder : {
 
-        HolderName      :   'Test Holder Name 1',
+        HolderName      :   'Test Holder Name 2',
         EntityName      :   'Test Entity Name',
         Classification  :   'B',
         FEIN            :   '987654321',
@@ -71,7 +73,7 @@ module.exports = {
         HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
         ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
-        DatePaid        :   '',     // N or Date
+        DatePaid        :   '09092020',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
         StateList       :   'RI',   //['AK','KS','MD','MT','ND','UT','VT']
         StateList1      :   ['NY'],   //['AK','KS','MD','MT','ND','UT','VT']

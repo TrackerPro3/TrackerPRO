@@ -1,5 +1,4 @@
 const { I } = inject();
-const puppeteer = require('puppeteer');
 
 module.exports = {
 
@@ -44,6 +43,7 @@ module.exports = {
 
 
     SelectHolder(holdername) {
+        I.wait(2);
         I.checkOption("//div[contains(text(),'" + holdername + "')]");
     },
 
@@ -64,12 +64,10 @@ module.exports = {
     },
 
     DatePaid(DatePaid) {
-        if (DatePaid == 'N') {
-        }
-        else
+        if (DatePaid != 'N') {
             I.fillField(this.locators.stateReportDatePaid, DatePaid);
-        I.pressKey(['Tab']);
-
+            I.pressKey(['Tab']);
+        }
     },
 
     StateTable() {

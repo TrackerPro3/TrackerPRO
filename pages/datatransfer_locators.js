@@ -54,7 +54,7 @@ module.exports = {
   ImportFile() {
     I.waitForEnabled(this.locators.importFile,50);
     I.wait(2);
-    I.click(this.locators.importFile);
+    I.forceClick(this.locators.importFile);
     I.waitForText('Report History',30);
   }
 
