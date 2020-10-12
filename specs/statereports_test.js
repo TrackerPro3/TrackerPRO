@@ -67,24 +67,46 @@ td.forEach(async function (value) {
         I.waitForText('Generate State Reports', 30);
         StateReports.ReportsCategory(value.ReportCategory);
 
-        let holders = value.Holders;
-        let x;
-        for (x of [holders]) {
-            StateReports.SelectHolder(x);
+        // let holders = value.Holders;
+        // let x;
+        // for (x of [holders]) {
+        //     StateReports.SelectHolder(x);
+        // }
+
+        // var states1 = value.Holders;
+        // states1.forEach(function(value1) {
+        //     console.log(value1)
+        // }) 
+
+        var holders = [];
+
+        function myFunction() {
+            holders.push(value.Holders);
         }
-        
-            
+
+        myFunction();
+        console.log(holders)
+        let x;
+        for (x of holders) {
+            StateReports.SelectHolder(x);
+            // console.log(x)
+        }
+
+
+
+
+
         StateReports.ReportGroup(value.ReportGroup);
         StateReports.ReportDetails(value.ReportDetail);
         StateReports.DatePaid(value.DatePaid);
         StateReports.StateTable();
 
-   
+
         let states = value.States;
         let y;
-        for(y of states) {
-        await StateReports.ReportTypeZ(value.ReportType, y);
-        }    
+        for (y of states) {
+            await StateReports.ReportTypeZ(value.ReportType, y);
+        }
 
 
 

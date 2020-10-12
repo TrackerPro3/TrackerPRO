@@ -1,3 +1,4 @@
+const { login } = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 // const { setWindowSize } = require('@codeceptjs/configure');
 // const { output } = require('codeceptjs');
 // setWindowSize(1280, 960);
@@ -112,6 +113,7 @@ exports.config = {
             Login.ActualPassword(await Login.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
             Login.MustChange(data.login.newPassword);   // input New Password
             Login.OrgPage(data.login.Org);
+            
 
           },
           check: (Login) => {

@@ -5,7 +5,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://cdrdevapp16.ryanco.com/Pinned2',
+        Build           :   'https://azrtracker01.trackerpro.cc/Alfa',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
@@ -26,12 +26,12 @@ module.exports = {
         MappingDesc     :   'Test File Mapping Description Delimited',
         MappingType     :   'Delimited',     // Excel or Delimited or Fixed
         Delimiter       :   '|',
-        MappingSheet    :   'FileMappingDelimited'     // FileMappingDelimted or FileMappingExcel
+        MappingSheet    :   'FileMappingDelimited'     // FileMappingDelimited or FileMappingExcel
     },
 
     holder : {
 
-        HolderName      :   'Test Holder Name 2',
+        HolderName      :   'Test Holder Name Excel',
         EntityName      :   'Test Entity Name',
         Classification  :   'B',
         FEIN            :   '987654321',
