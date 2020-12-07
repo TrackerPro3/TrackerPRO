@@ -11,11 +11,14 @@ module.exports = {
 
   locators: {
     username: "ctl00$cphBody$txtUsername",
-    password: "#ctl00_cphBody_txtPassword",
+    password: "#txtPassword",
+    // password: "#ctl00_cphBody_txtPassword",
     selectButton: ".tpro-btn-icon-label",
     alertContent: '.alert-contents',
-    newPassword: '#ctl00_cphBody_txtNewPassword',
-    confirmPassword: '#ctl00_cphBody_txtVerifyPassword'
+    newPassword: '#txtNewPassword',
+    // newPassword: '#ctl00_cphBody_txtNewPassword',
+    confirmPassword: '#txtVerifyPassword'
+    // confirmPassword: '#ctl00_cphBody_txtVerifyPassword'
 
   },
 

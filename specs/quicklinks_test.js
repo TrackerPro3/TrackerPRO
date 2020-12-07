@@ -1,5 +1,5 @@
 
-Feature('Import Data');
+Feature('Quick Links');
 
 let Login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');

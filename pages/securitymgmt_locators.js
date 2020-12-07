@@ -26,7 +26,7 @@ module.exports = {
 
     SecurityAdmin() {
         I.click(this.locators.securityAdminPage);
-        I.waitForNavigation();
+        // I.waitForNavigation();
         I.waitForText('Security Administration', 30);
     },
 

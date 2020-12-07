@@ -43,7 +43,7 @@ Scenario("Generate State Report @statereport ", async (I) => {
     StateReports.ReportDetails(data.report.ReportDetail);
     StateReports.DatePaid(data.report.DatePaid);
     StateReports.StateTable();
-    let states = data.report.StateList;
+    let states = data.report.StateList1;
     let y;
     for (y of states) {
         await StateReports.ReportTypeZ(data.report.ReportType, y);

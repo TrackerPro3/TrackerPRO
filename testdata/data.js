@@ -5,10 +5,10 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtracker01.trackerpro.cc/Alfa',
-        Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
-        Password        :   'Password', 
-        Org             :   'QA - Surya',
+        Build           :   'https://win16sql16.trackerpro.cc',
+        Username        :   'Surya',      //suryateja.davuluri@ryan.com
+        Password        :   'Password1', 
+        Org             :   'QA - Surya Test',
         Browser         :   'Chrome'    // Chrome or Edge or Leave it Blank for Chromium
  
     },
@@ -22,18 +22,18 @@ module.exports = {
 
     filemapping : {
 
-        MappingName     :   'Test File Mapping Delimited',
-        MappingDesc     :   'Test File Mapping Description Delimited',
-        MappingType     :   'Delimited',     // Excel or Delimited or Fixed
+        MappingName     :   'Test Excel Mapping',
+        MappingDesc     :   'Test Excel Mapping Description',
+        MappingType     :   'Excel',     // Excel or Delimited or Fixed
         Delimiter       :   '|',
-        MappingSheet    :   'FileMappingDelimited'     // FileMappingDelimited or FileMappingExcel
+        MappingSheet    :   'mapexcel'     // FileMappingDelimited or FileMappingExcel
     },
 
     holder : {
 
-        HolderName      :   'Test Holder Name Excel',
+        HolderName      :   'Test Holder Name',
         EntityName      :   'Test Entity Name',
-        Classification  :   'B',
+        Classification  :   'C',
         FEIN            :   '987654321',
         Address         :   'Test Address',
         City            :   'Test City',
@@ -73,11 +73,10 @@ module.exports = {
         HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
         ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
-        DatePaid        :   '09092020',     // N or Date
+        DatePaid        :   '12012020',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
         StateList       :   'RI',   //['AK','KS','MD','MT','ND','UT','VT']
-        StateList1      :   ['NY'],   //['AK','KS','MD','MT','ND','UT','VT']
-        StateList2      :   ['GA','GU']   //['AK','KS','MD','MT','ND','UT','VT']
+        StateList1      :   ['AK','KS','MD','MT','ND','UT','VT'],   //['AK','KS','MD','MT','ND','UT','VT']
 
 
     },
@@ -89,7 +88,7 @@ module.exports = {
         HolderList      :   ['DDL'], // ['Card','DDL','WOF','PJ Corporation']
         ReportGroup     :   'Separate',     //Separate, By Holder/State, By Holder, By State, All
         ReportDetail    :   'Finalize',     // Preview or Finalize
-        DatePaid        :   '',     // N or Date
+        DatePaid        :   '10102020',     // N or Date
         ReportType      :   'Final',     // Prelim or Final
         StateList       :   ['KS','MD','MT','ND','UT','VT']
 

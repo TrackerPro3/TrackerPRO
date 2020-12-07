@@ -23,7 +23,7 @@ After(() => {
 Scenario("Test File Upload types @files", (I) => {
     SecurityMgmt.SecurityMenu();
     SecurityMgmt.SecurityAdmin();
-    SecurityMgmt.SecurityAdminSave();
+    // SecurityMgmt.SecurityAdminSave();
 
     var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'FileTypes');
     td.forEach(function (value) {

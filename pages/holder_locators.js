@@ -50,7 +50,7 @@ module.exports = {
 
   HolderOverview() {
     I.retry(2).click(this.locators.holderOverview);
-    I.waitForNavigation();
+    // I.waitForNavigation();
   },
 
   NewHolder() {
