@@ -7,7 +7,7 @@ let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
 let pup = require('../utilities/pup.js');
 
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
     Login.SelectBuild(data.login.Build);   // input Build Name
     Login.Username(data.login.Username);    // input Username
     Login.Password(data.login.defaultPassword);
@@ -21,7 +21,7 @@ After(() => {
 })
 
 
-Scenario('Test Add Single Holder @oneholder', (I) => {
+Scenario('Test Add Single Holder @oneholder', ({ I }) => {
 
     Holder.HolderOverview();  //CreateHolder
     I.see('Holder Overview');
@@ -73,7 +73,7 @@ Scenario('Test Add Single Holder @oneholder', (I) => {
 // Scenario("Test Multiple Holder '" + value.HolderType  + "' @allholders", (I) => {
 
 
-Scenario("Test Multiple Holder @allholders", (I) => {
+Scenario("Test Multiple Holder @allholders", ({ I }) => {
     var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Holder');
     td.forEach(function (value) {
 

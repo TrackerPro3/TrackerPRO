@@ -61,7 +61,8 @@ module.exports = {
         I.see('Ryan');
         break;
       default: I.amOnPage('/');
-        I.see('Ryan');
+        // I.see('Ryan');
+        I.waitForText('Ryan',90);
     }
   },
 
@@ -87,8 +88,8 @@ module.exports = {
   },
 
   // This function checks for must change password page
-  async MustChange(newPassword) {
-    switch (await I.grabTitle()) {
+  async MustChange(title,newPassword) {
+    switch (title) {
       case 'Tracker®PRO - Select Organization':
         {
           I.see('Select Organization');
@@ -100,7 +101,7 @@ module.exports = {
           I.fillField(this.locators.newPassword, newPassword);
           I.fillField(this.locators.confirmPassword, newPassword);
           I.click('Login');
-          I.waitForNavigation();
+          // I.waitForNavigation();
           break;
         }
         case 'Tracker®PRO - Home':
@@ -115,16 +116,16 @@ module.exports = {
 
 
   // This function let us decide the Org Name and Org Page appearing
-  async OrgPage(orgName) {
+  async OrgPage(org,orgName) {
     // let title = PageTitle
-    switch (await I.grabTitle()) {
+    switch (org) {
 
       case 'Tracker®PRO - Select Organization':
         {
           I.see('Select Organization');
           I.click("//div[contains(text(),'" + orgName + "')]");
           I.click(this.locators.selectButton);
-          I.waitForNavigation();
+          // I.waitForNavigation();
           I.waitForText('Home', 30);
           I.see('Home');
           break;

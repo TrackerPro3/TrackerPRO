@@ -6,7 +6,7 @@ let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let DataTransfer = require('C:/Users/RC08508/CodeceptJS/pages/datatransfer_locators.js');
 let pup = require('../utilities/pup.js');
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
   Login.SelectBuild(data.login.Build);   // input Build Name
   Login.Username(data.login.Username);    // input Username
   Login.Password(data.login.defaultPassword);
@@ -22,7 +22,7 @@ After(() => {
 
 
 
-  Scenario("Import Files @import", (I) => {
+  Scenario("Import Files @import", ({ I }) => {
     DataTransfer.DataMenu();
     DataTransfer.ImportDataPage();
     DataTransfer.SelectMapping(data.import.MappingType,data.import.HolderName);

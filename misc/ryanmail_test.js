@@ -6,7 +6,7 @@ let I_letter = require('C:/Users/RC08508/CodeceptJS/pages/letter_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
   //Login
   I_login.SelectBuild(data.login.Build);   // input Build Name
   I.see('Ryan');
@@ -30,11 +30,11 @@ Before(async (I) => { // or Background
 });
 
 
-Scenario('Add Return Address', (I) => {
+Scenario('Add Return Address', ({ I }) => {
 
 });
 
-Scenario('Generate RyanMail for Basic DDL Letter', (I) => {
+Scenario('Generate RyanMail for Basic DDL Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
   
@@ -144,7 +144,7 @@ Scenario('Generate RyanMail for Basic DDL Letter', (I) => {
 
 
 
-Scenario('Generate RyanMail for Advanced DDL Letter', (I) => {
+Scenario('Generate RyanMail for Advanced DDL Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
   
@@ -253,7 +253,7 @@ Scenario('Generate RyanMail for Advanced DDL Letter', (I) => {
 });
 
 
-Scenario('Generate RyanMail for Search Letter', (I) => {
+Scenario('Generate RyanMail for Search Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
  

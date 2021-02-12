@@ -6,7 +6,7 @@ let I_letter = require('C:/Users/RC08508/CodeceptJS/pages/letter_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
   //Login
   I_login.SelectBuild(data.login.Build);   // input Build Name
   I.see('Ryan');
@@ -30,7 +30,7 @@ Before(async (I) => { // or Background
 });
 
 
-Scenario('Generate Basic DDL Letter', (I) => {
+Scenario('Generate Basic DDL Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
 
@@ -109,7 +109,7 @@ Scenario('Generate Basic DDL Letter', (I) => {
 
 
 
-Scenario('Generate Advanced DDL Letter', (I) => {
+Scenario('Generate Advanced DDL Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
 
@@ -189,7 +189,7 @@ Scenario('Generate Advanced DDL Letter', (I) => {
 });
 
 
-Scenario('Generate Search Letter', (I) => {
+Scenario('Generate Search Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
 
@@ -269,7 +269,7 @@ Scenario('Generate Search Letter', (I) => {
 });
 
 
-Scenario('Generate State CD Letter', (I) => {
+Scenario('Generate State CD Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
 
@@ -350,7 +350,7 @@ Scenario('Generate State CD Letter', (I) => {
 
 
 
-Scenario('Generate State Extension Letter', (I) => {
+Scenario('Generate State Extension Letter', ({ I }) => {
 
   I.say('Generate Normal Letters');
 

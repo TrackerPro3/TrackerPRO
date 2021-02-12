@@ -8,7 +8,7 @@ let pup = require('../utilities/pup.js');
 
 
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
   Login.SelectBuild(data.login.Build);   // input Build Name
   Login.Username(data.login.Username);    // input Username
   Login.Password(data.login.defaultPassword);
@@ -28,7 +28,7 @@ After(() => {
 // td.forEach(function (value) {
 // Scenario("Generate '" + value.LetterType + "' + Letter @letter ", (I) => {
 
-    Scenario("Generate Letter @letter ", (I) => {
+    Scenario("Generate Letter @letter ", ({ I }) => {
     var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'Letter');
     td.forEach(function (value) {
   
@@ -57,7 +57,7 @@ After(() => {
 // Scenario("Generate '" + value.LetterType + "' + Letter @ryanmail", (I) => {
 
 
-    Scenario("Generate RyanMail Letter @ryanmail", (I) => {
+    Scenario("Generate RyanMail Letter @ryanmail", ({ I }) => {
     var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChrome.xlsx', 'RyanMail');
     td.forEach(function (value) {
 

@@ -14,7 +14,7 @@ let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
 let scroll = require('../utilities/scroll.js');
 
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
     Login.SelectBuild(data.login.Build);   // input Build Name
     Login.Username(data.login.Username);    // input Username
     Login.Password(data.login.defaultPassword);
@@ -28,7 +28,7 @@ Before(async (I) => { // or Background
 //     pup.closeBrowser();
 //   })
 
-Scenario("Generate State Report @statereport ", async (I) => {
+Scenario("Generate State Report @statereport ", async ({ I }) => {
 
     StateReports.ReportMenu();
     StateReports.GenerateStateReportPage();
@@ -60,7 +60,7 @@ var td = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/TrackerDataChr
 td.forEach(async function (value) {
 
 
-    Scenario("Generate all State Reports @allstatereport ", async (I) => {
+    Scenario("Generate all State Reports @allstatereport ", async ({ I }) => {
 
         StateReports.ReportMenu();
         StateReports.GenerateStateReportPage();
@@ -117,7 +117,7 @@ td.forEach(async function (value) {
     });
 });
 
-Scenario("Submit State Report @submitreport ", async (I) => {
+Scenario("Submit State Report @submitreport ", async ({ I }) => {
 
     // StateReports.ReportMenu();
     // StateReports.GenerateStateReportPage();
@@ -188,7 +188,7 @@ Scenario("Submit State Report @submitreport ", async (I) => {
 });
 
 
-Scenario("Generate State Report @test ", async (I) => {
+Scenario("Generate State Report @test ", async ({ I }) => {
 
     StateReports.ReportMenu();
     StateReports.GenerateStateReportPage();

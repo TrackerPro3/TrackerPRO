@@ -5,11 +5,11 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://win16sql16.trackerpro.cc',
-        Username        :   'Surya',      //suryateja.davuluri@ryan.com
-        Password        :   'Password1', 
-        Org             :   'QA - Surya Test',
-        Browser         :   'Chrome'    // Chrome or Edge or Leave it Blank for Chromium
+        Build           :   'https://azrtpqaw16.trackerpro.cc/Charlie',
+        Username        :   'Test4',      //suryateja.davuluri@ryan.com
+        Password        :   'Password', 
+        Org             :   'QA - Surya',
+        Browser         :   'Edge'    // Chrome or Edge or Leave it Blank for Chromium
  
     },
 
@@ -31,7 +31,7 @@ module.exports = {
 
     holder : {
 
-        HolderName      :   'Test Holder Name',
+        HolderName      :   'Test Holder 8.3.00',
         EntityName      :   'Test Entity Name',
         Classification  :   'C',
         FEIN            :   '987654321',

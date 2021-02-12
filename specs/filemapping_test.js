@@ -7,7 +7,7 @@ let FileMapping = require('C:/Users/RC08508/CodeceptJS/pages/filemapping_locator
 let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
 let pup = require('../utilities/pup.js');
 
-Before(async (I) => { // or Background
+Before(async ({ I }) => { // or Background
   Login.SelectBuild(data.login.Build);   // input Build Name
   Login.Username(data.login.Username);    // input Username
   Login.Password(data.login.defaultPassword);
@@ -20,7 +20,7 @@ After(() => {
   pup.closeBrowser();
 })
 
-Scenario("Create File Mapping @filemapping", (I) => {
+Scenario("Create File Mapping @filemapping", ({ I }) => {
 
   FileMapping.DataMenu();
   FileMapping.CreateFileMapping();

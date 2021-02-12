@@ -15,12 +15,15 @@ exports.config = {
       // restart: true,
       keepCookies: true,
       waitForNavigation: "domcontentloaded",
+      getPageTimeout: 0,
+      // waitForTimeout : 150000,
       // waitForAction: 1000,
       // windowSize: '1280x960',
       chrome: {
         args: ['--ignore-certificate-errors', '--window-size=1280,960'],
         defaultViewport: null,
         executablePath: browserselect.browserSelect(data.login.Browser),
+        timeout:0
       },
     },
     "FileSystem": {
@@ -77,12 +80,12 @@ exports.config = {
     screenshotOnFail: {
       enabled: true
     },
-    // pauseOnFail: {
-    // },
-    // retryFailedStep: {
-    //   enabled: false,
-    //   retries: 2
-    // },
+    pauseOnFail: {
+    },
+    retryFailedStep: {
+      enabled: true,
+      retries: 2
+    },
     autoDelay: {
       enabled: true
     },
@@ -93,38 +96,38 @@ exports.config = {
     allure: {
       outputDir: './output/allure'
     },
-    autoLogin: {
-      enabled: false,
-      saveToFile: false, // set this to false if you don't need to pass cookies to other sessions
-      inject: 'loginAs', // use `loginAs` instead of login
-      users: {
-        Surya: {
-          login: async (Login) => {
-            Login.amOnPage(data.login.Build);
-            // I.fillField('ctl00$cphBody$txtUsername', 'suryateja.davuluri@ryan.com');
-            // I.click('Next');
-            // I.fillField('#ctl00_cphBody_txtPassword', 'Password');
-            // I.click('Next');
-            // I.click("//div[contains(text(),'" + data.login.Org + "')]");
-            // I.click('.tpro-btn-icon-label');
-            // Login.SelectBuild(data.login.Build);   // input Build Name
-            Login.Username(data.login.Username);    // input Username
-            Login.Password(data.login.defaultPassword); // input default Password
-            Login.ActualPassword(await Login.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
-            Login.MustChange(data.login.newPassword);   // input New Password
-            Login.OrgPage(data.login.Org);
+    // autoLogin: {
+    //   enabled: false,
+    //   saveToFile: false, // set this to false if you don't need to pass cookies to other sessions
+    //   inject: 'loginAs', // use `loginAs` instead of login
+    //   users: {
+    //     Surya: {
+    //       login: async (Login) => {
+    //         Login.amOnPage(data.login.Build);
+    //         // I.fillField('ctl00$cphBody$txtUsername', 'suryateja.davuluri@ryan.com');
+    //         // I.click('Next');
+    //         // I.fillField('#ctl00_cphBody_txtPassword', 'Password');
+    //         // I.click('Next');
+    //         // I.click("//div[contains(text(),'" + data.login.Org + "')]");
+    //         // I.click('.tpro-btn-icon-label');
+    //         // Login.SelectBuild(data.login.Build);   // input Build Name
+    //         Login.Username(data.login.Username);    // input Username
+    //         Login.Password(data.login.defaultPassword); // input default Password
+    //         Login.ActualPassword(await Login.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
+    //         Login.MustChange(data.login.newPassword);   // input New Password
+    //         Login.OrgPage(data.login.Org);
             
 
-          },
-          check: (Login) => {
-            Login.seeInCurrentUrl('/Home.aspx');
-          },
-          fetch: () => {}, // empty function
-          restore: () => {}, // empty funciton
-        },
-      }
+    //       },
+    //       check: (Login) => {
+    //         Login.seeInCurrentUrl('/Home.aspx');
+    //       },
+    //       fetch: () => {}, // empty function
+    //       restore: () => {}, // empty funciton
+    //     },
+    //   }
       
-    }
+    // }
   },
   tests: './specs/*_test.js',
   name: 'CodeceptJS',

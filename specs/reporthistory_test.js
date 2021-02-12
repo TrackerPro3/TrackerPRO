@@ -4,11 +4,11 @@ Feature('Report History');
 // let Login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 // let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 
-Before(async (loginAs) => { // or Background
+Before(async ({ loginAs }) => { // or Background
   await loginAs('Surya');
 });
 
-  Scenario("Download Files", async (I) => {
+  Scenario("Download Files", async ({ I }) => {
     // await loginAs('Surya');
     I.click('#ctl00_reportHistoryLink');
     I.waitForNavigation();
@@ -26,7 +26,7 @@ Before(async (loginAs) => { // or Background
 
   });
 
-  Scenario("Export 2", async (I) => {
+  Scenario("Export 2", async ({ I }) => {
     I.click('#ctl00_reportHistoryLink');
     I.waitForNavigation();
     I.waitForText('Report History',30);

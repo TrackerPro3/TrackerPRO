@@ -10,12 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "codeceptjs": "^2.6.6",
+    "codeceptjs": "^3.0.4",
     "mocha": "^8.1.3",
     "puppeteer": "^5.2.1"
   },
   "dependencies": {
-    "@codeceptjs/ui": "^0.4.0",
+    "@codeceptjs/ui": "^0.4.3",
     "auto-login": "^1.0.3",
     "mocha-multi": "^1.1.3",
     "mochawesome": "^6.1.1",
