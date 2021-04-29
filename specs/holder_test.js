@@ -10,10 +10,11 @@ let pup = require('../utilities/pup.js');
 Before(async ({ I }) => { // or Background
     Login.SelectBuild(data.login.Build);   // input Build Name
     Login.Username(data.login.Username);    // input Username
-    Login.Password(data.login.defaultPassword);
+    Login.Password(data.login.defaultPassword); // input default Password
     Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
-    Login.MustChange(data.login.newPassword);
-    Login.OrgPage(data.login.Org);
+    // Login.ActualPassword(data.login.Password);   // input Password
+    Login.MustChange(await I.grabTitle(),data.login.newPassword);   // input New Password
+    Login.OrgPage(await I.grabTitle(),data.login.Org);     // input Org Name
 });
 
 After(() => {
@@ -24,9 +25,9 @@ After(() => {
 Scenario('Test Add Single Holder @oneholder', ({ I }) => {
 
     Holder.HolderOverview();  //CreateHolder
-    I.see('Holder Overview');
+    I.waitForText('Holder Overview',30);
     Holder.NewHolder();
-    I.see('Holder Detail');
+    I.waitForText('Holder Detail',30);
     Holder.HolderName(data.holder.HolderName);
     Holder.EntityName(data.holder.EntityName);
     Holder.Classification(data.holder.Classification);
@@ -81,6 +82,7 @@ Scenario("Test Multiple Holder @allholders", ({ I }) => {
         I.say(value.HolderType);    //CreateHolder
         Holder.HolderOverview();
         I.see('Holder Overview');
+        // pause();
         Holder.NewHolder();
         I.see('Holder Detail');
         Holder.HolderName(value.HolderName);

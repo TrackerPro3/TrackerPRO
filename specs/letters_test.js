@@ -11,10 +11,11 @@ let pup = require('../utilities/pup.js');
 Before(async ({ I }) => { // or Background
   Login.SelectBuild(data.login.Build);   // input Build Name
   Login.Username(data.login.Username);    // input Username
-  Login.Password(data.login.defaultPassword);
+  Login.Password(data.login.defaultPassword); // input default Password
   Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
-  Login.MustChange(data.login.newPassword);
-  Login.OrgPage(data.login.Org);
+  // Login.ActualPassword(data.login.Password);   // input Password
+  Login.MustChange(await I.grabTitle(),data.login.newPassword);   // input New Password
+  Login.OrgPage(await I.grabTitle(),data.login.Org);     // input Org Name
 });
 
 After(() => {
@@ -45,7 +46,7 @@ After(() => {
     I.checkOption(value.Option2);
     Letters.FinalizeLetter();
     Letters.GenerateLetter();
-    I.see('Report History');
+    
 
   });
 
@@ -80,7 +81,7 @@ After(() => {
     I.checkOption('Override Notification Type');
     Letters.FinalizeLetter();
     I.wait(2);
-    Letters.GenerateLetter();
+    Letters.GenerateLetterRyanMail();
     I.wait(2);
     if (value.LetterType.indexOf('DDL') != -1) {
       I.checkOption('By selecting the checkbox, I agree to the letter format change chosen knowing it could affect the way the letter looks or the number of pages generated.');

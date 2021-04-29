@@ -10,10 +10,10 @@ module.exports = {
   },
 
   locators: {
-    dataMenu: '//a[@class="dropdown-toggle"][contains(text(),"Data")]',
+    dataMenu: '(//a[contains(text(),"Data")])[1]',
     createFileMapping: '//a[contains(text(),"Create File Mapping")]',
-    mappingName: '//input[@id="ctl00_cphBody_txtMappingName"]',
-    mappingDesc: '//textarea[@id="ctl00_cphBody_txtFileMappingDesc"]',
+    mappingName: '#txtMappingName',   //#txtMappingName ,//input[@id="ctl00_cphBody_txtMappingName"]
+    mappingDesc: '#txtFileMappingDesc',  //#txtFileMappingDesc, //textarea[@id="ctl00_cphBody_txtFileMappingDesc"]
     mappingType: '//input[@id="cboFileFormat-combo-text"]',
     delimiterType: '#ctl00_cphBody_txtDelimiter',
     mappingfieldAdd: '//button[@id="ctl00_cphBody_fileMappingDataJsonGrid_add"]',

@@ -16,11 +16,12 @@ let scroll = require('../utilities/scroll.js');
 
 Before(async ({ I }) => { // or Background
     Login.SelectBuild(data.login.Build);   // input Build Name
-    Login.Username(data.login.Username);    // input Username
-    Login.Password(data.login.defaultPassword);
-    Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
-    Login.MustChange(data.login.newPassword);
-    Login.OrgPage(data.login.Org);
+  Login.Username(data.login.Username);    // input Username
+  Login.Password(data.login.defaultPassword); // input default Password
+  Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
+  // Login.ActualPassword(data.login.Password);   // input Password
+  Login.MustChange(await I.grabTitle(),data.login.newPassword);   // input New Password
+  Login.OrgPage(await I.grabTitle(),data.login.Org);     // input Org Name
 });
 
 
@@ -67,47 +68,22 @@ td.forEach(async function (value) {
         I.waitForText('Generate State Reports', 30);
         StateReports.ReportsCategory(value.ReportCategory);
 
-        // let holders = value.Holders;
-        // let x;
-        // for (x of [holders]) {
-        //     StateReports.SelectHolder(x);
-        // }
-
-        // var states1 = value.Holders;
-        // states1.forEach(function(value1) {
-        //     console.log(value1)
-        // }) 
-
-        var holders = [];
-
-        function myFunction() {
-            holders.push(value.Holders);
-        }
-
-        myFunction();
-        console.log(holders)
-        let x;
-        for (x of holders) {
-            StateReports.SelectHolder(x);
-            // console.log(x)
-        }
-
-
-
-
+        var td1 = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/StateReporting.xlsx', 'Holders');
+            td1.forEach(async function (value1) {
+                StateReports.SelectHolder(value1.Holders)
+            })
 
         StateReports.ReportGroup(value.ReportGroup);
         StateReports.ReportDetails(value.ReportDetail);
         StateReports.DatePaid(value.DatePaid);
         StateReports.StateTable();
 
-
-        let states = value.States;
-        let y;
-        for (y of states) {
-            await StateReports.ReportTypeZ(value.ReportType, y);
-        }
-
+        var td2 = xl.read_from_excel('C:/Users/RC08508/CodeceptJS/testdata/StateReporting.xlsx', 'States');
+        td2.forEach(async function (value2) {
+            console.log(value.ReportType)
+            StateReports.ReportTypeZ(value.ReportType,value2.States)
+        })
+     
 
 
         // await StateReports.ReportTypeZ(value.ReportType, value.States);

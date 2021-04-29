@@ -76,11 +76,21 @@ module.exports = {
     I.wait(2);
     I.click(this.locators.generateLetter);
     // I.waitForText('Report Selection', 30);
+    I.wait(10);
+    I.waitForText('Report History',30);
+  },
+
+  GenerateLetterRyanMail() {
+    I.waitForVisible(this.locators.generateLetter,10);
+    I.wait(2);
+    I.click(this.locators.generateLetter);
   },
 
   ConfirmRyanMail() {
     I.waitForVisible(this.locators.ryanmailConfirm,10);
     I.click(this.locators.ryanmailConfirm);
+    I.wait(10);
+    I.waitForText('Report History',30);
   },
 
   // LetterCheck() {

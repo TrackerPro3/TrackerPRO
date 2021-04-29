@@ -5,8 +5,8 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtpqaw16.trackerpro.cc/Charlie',
-        Username        :   'Test4',      //suryateja.davuluri@ryan.com
+        Build           :   'https://azrtracker01.trackerpro.cc/Lima',
+        Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
         Browser         :   'Edge'    // Chrome or Edge or Leave it Blank for Chromium
@@ -22,11 +22,11 @@ module.exports = {
 
     filemapping : {
 
-        MappingName     :   'Test Excel Mapping',
+        MappingName     :   'Test Excel Mapping 4392',
         MappingDesc     :   'Test Excel Mapping Description',
         MappingType     :   'Excel',     // Excel or Delimited or Fixed
         Delimiter       :   '|',
-        MappingSheet    :   'mapexcel'     // FileMappingDelimited or FileMappingExcel
+        MappingSheet    :   'Sheet3'     // FileMappingDelimited or FileMappingExcel
     },
 
     holder : {
@@ -95,6 +95,7 @@ module.exports = {
     }
 
 }
+
 
 
 
