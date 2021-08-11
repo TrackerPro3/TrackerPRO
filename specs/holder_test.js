@@ -66,6 +66,7 @@ Scenario('Test Add Single Holder @oneholder', ({ I }) => {
     I.wait(2);
     Holder.AdditionalHolderInfoSave();
     Holder.AdditionalHolderInfoClose();
+    
 });
 
 

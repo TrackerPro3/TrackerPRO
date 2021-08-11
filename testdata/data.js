@@ -5,7 +5,7 @@ module.exports = {
         defaultPassword :   'password',  // Default Value
         newPassword     :   'Password',  // Default Value
 
-        Build           :   'https://azrtracker01.trackerpro.cc/Lima',
+        Build           :   'https://win19sql19.trackerpro.cc/',
         Username        :   'suryateja.davuluri@ryan.com',      //suryateja.davuluri@ryan.com
         Password        :   'Password', 
         Org             :   'QA - Surya',
@@ -22,11 +22,11 @@ module.exports = {
 
     filemapping : {
 
-        MappingName     :   'Test Excel Mapping 4392',
+        MappingName     :   'Test Excel Mapping Release',
         MappingDesc     :   'Test Excel Mapping Description',
         MappingType     :   'Excel',     // Excel or Delimited or Fixed
         Delimiter       :   '|',
-        MappingSheet    :   'Sheet3'     // FileMappingDelimited or FileMappingExcel
+        MappingSheet    :   'mapexcel'     // FileMappingDelimited or FileMappingExcel
     },
 
     holder : {
