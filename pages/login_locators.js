@@ -71,6 +71,7 @@ module.exports = {
     I.click('Next');
     // I.waitForNavigation();
     I.waitForText('Forgot your password?', 30);
+    
   },
 
   Password(Password) {

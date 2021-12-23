@@ -13,6 +13,8 @@ Scenario('Test Login @login', async ({ I }) => {
   Login.ActualPassword(await I.grabTextFrom(Login.locators.alertContent), data.login.Password);   // input Password
   // Login.ActualPassword(data.login.Password);   // input Password
   Login.MustChange(await I.grabTitle(),data.login.newPassword);   // input New Password
-  Login.OrgPage(await I.grabTitle(),data.login.Org);     // input Org Name
+  Login.OrgPage(await I.grabTitle(),data.login.Org);     
+  
+  // input Org Name
 });
 

@@ -21,9 +21,9 @@ exports.config = {
       // windowSize: '1280x960',
       chrome: {
         args: ['--ignore-certificate-errors', '--window-size=1280,960'],
-        defaultViewport: null,
-        executablePath: browserselect.browserSelect(data.login.Browser),
-        timeout:0
+        // defaultViewport: null,
+        // executablePath: browserselect.browserSelect(data.login.Browser),
+        // timeout:0
       },
     },
     "FileSystem": {
