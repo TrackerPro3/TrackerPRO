@@ -4,7 +4,9 @@ let Login = require('C:/Users/RC08508/CodeceptJS/pages/login_locators.js');
 let Holder = require('C:/Users/RC08508/CodeceptJS/pages/holder_locators.js');
 let data = require('C:/Users/RC08508/CodeceptJS/testdata/data.js');
 let xl = require('C:/Users/RC08508/CodeceptJS/utilities/excelReader.js');
-let pup = require('../utilities/pup.js');
+// let pup = require('../utilities/pup.js');
+
+
 
 
 Before(async ({ I }) => { // or Background
@@ -40,6 +42,8 @@ Scenario('Test Add Single Holder @oneholder', ({ I }) => {
     Holder.Zip(data.holder.Zip);
     Holder.INCState(data.holder.INCState);
     Holder.SaveHolder();
+
+    
 
     Holder.AddContact();   // Contact
     I.checkOption(data.holder.ContactType);

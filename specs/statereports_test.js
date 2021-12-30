@@ -167,6 +167,7 @@ Scenario("Submit State Report @submitreport ", async ({ I }) => {
 Scenario("Generate State Report @test ", async ({ I }) => {
 
     StateReports.ReportMenu();
+    
     StateReports.GenerateStateReportPage();
     I.waitForText('Generate State Reports', 30);
     StateReports.ReportsCategory(data.report.ReportCategory);

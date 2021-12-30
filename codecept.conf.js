@@ -10,7 +10,7 @@ exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
-      url: data.login.Build,
+      url: '',
       show: true,
       // restart: true,
       keepCookies: true,
